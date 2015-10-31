@@ -7,8 +7,10 @@
 //
 
 #import "COMyProfileViewController.h"
+#import "COUser.h"
 
 @interface COMyProfileViewController ()
+
 
 @end
 
@@ -16,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.navigationItem.title = @"My Profile";
+    
+    COUser *user = (COUser *)[PFUser currentUser];
+    self.nameTextLabel.text = user.name;
+    
 }
 
 - (void)didReceiveMemoryWarning {

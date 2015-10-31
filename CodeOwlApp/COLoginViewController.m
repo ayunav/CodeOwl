@@ -5,10 +5,14 @@
 //  Created by Ayuna Vogel on 10/31/15.
 //  Copyright © 2015 Ayuna Vogel. All rights reserved.
 //
+#import <Parse/Parse.h>
 
 #import "COLoginViewController.h"
+#import "COUser.h"
 
-@interface COLoginViewController ()
+@interface COLoginViewController () <FBSDKLoginButtonDelegate>
+
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
 @end
 
@@ -16,7 +20,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+
+    loginButton.readPermissions =
+    @[@"public_profile", @"email", @"user_friends"];
+    
+    //    [PFUser currentUser];
+    
+    COUser *user = (COUser *)[PFUser currentUser];
+    user.name = @"Ayuna";
+    [user saveInBackground];
+}
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+    
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        
+        COUser *user = (COUser *)[PFUser currentUser];
+        user.name = result[@"name"];
+        
+    
+   
+    }];
+
+
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    
 }
 
 - (void)didReceiveMemoryWarning {
