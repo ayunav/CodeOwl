@@ -11,6 +11,8 @@
 
 @interface COMyProfileViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *avatarView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -22,7 +24,7 @@
     self.navigationItem.title = @"My Profile";
     
     COUser *user = (COUser *)[PFUser currentUser];
-    self.nameTextLabel.text = user.name;
+    self.nameLabel.text = user.name;
     
 }
 

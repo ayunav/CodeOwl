@@ -9,6 +9,7 @@
 
 #import "COLoginViewController.h"
 #import "COUser.h"
+#import "COMyProfileViewController.h"
 
 @interface COLoginViewController () <FBSDKLoginButtonDelegate>
 
@@ -21,9 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 
-    loginButton.readPermissions =
+    self.loginButton.delegate = self;
+    self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     
     //    [PFUser currentUser];
@@ -41,10 +43,12 @@
         
         COUser *user = (COUser *)[PFUser currentUser];
         user.name = result[@"name"];
-        
-    
    
+        UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+        [self presentViewController:tabBarController animated:YES completion:nil];
     }];
+    
+    
 
 
 }
