@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D9FDF11BE512360099E247 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D9FDF01BE512360099E247 /* MapKit.framework */; };
+		00D9FDF31BE512600099E247 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D9FDF21BE512600099E247 /* CoreLocation.framework */; };
 		290E03881BE4FECB00E544B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03871BE4FECB00E544B7 /* main.m */; };
 		290E038B1BE4FECB00E544B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E038A1BE4FECB00E544B7 /* AppDelegate.m */; };
 		290E03911BE4FECB00E544B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290E038F1BE4FECB00E544B7 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00D9FDF01BE512360099E247 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		00D9FDF21BE512600099E247 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		290E03831BE4FECB00E544B7 /* CodeOwlApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeOwlApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		290E03871BE4FECB00E544B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		290E03891BE4FECB00E544B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D9FDF31BE512600099E247 /* CoreLocation.framework in Frameworks */,
+				00D9FDF11BE512360099E247 /* MapKit.framework in Frameworks */,
 				7D6928B7F56D450BC9E41A3E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +195,8 @@
 		D8DF0F27CC0162E741D38EE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00D9FDF21BE512600099E247 /* CoreLocation.framework */,
+				00D9FDF01BE512360099E247 /* MapKit.framework */,
 				D733C1BAFEF69C98B4B55512 /* libPods.a */,
 			);
 			name = Frameworks;

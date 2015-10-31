@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface COMapViewController : UIViewController
+@interface COMapViewController : UIViewController <CLLocationManagerDelegate>
 
 @end
