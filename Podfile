@@ -1,6 +1,6 @@
 pod 'FBSDKCoreKit', '~> 4.7'
 pod 'FBSDKLoginKit', '~> 4.7'
 pod 'FBSDKShareKit', '~> 4.7'
-pod 'ParseFacebookUtilsV4'
 pod 'Parse', '~> 1.9'
 pod 'ParseUI', '~> 1.1'
+pod 'ParseFacebookUtilsV4'
