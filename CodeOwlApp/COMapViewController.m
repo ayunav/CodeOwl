@@ -7,8 +7,18 @@
 //
 
 #import "COMapViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface COMapViewController ()
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) CLLocationManager *locationManager;
+
+@property (nonatomic) BOOL firstTime;
+
+- (IBAction)showMyLocationButton:(id)sender;
+
 
 @end
 
@@ -16,7 +26,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //create location manager
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +43,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)locationManager:(CLLocationManager * _Nonnull)manager
+     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
+{
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    [self.mapView setRegion:MKCoordinateRegionMake(center, span)];
+    self.mapView.zoomEnabled = true;
+    self.mapView.scrollEnabled = true;
+    
 }
-*/
+//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+//    if (self.firstTime) {
+//        self.firstTime = NO;
+//        MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+//        [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, span)];
+//    }
+//}
 
+- (IBAction)showMyLocationButton:(id)sender {
+    
+    MKPointAnnotation *mapPin = [[MKPointAnnotation alloc]init];
+    mapPin.title = @"The Location";
+    //    mapPin.subtitle = @"Sub-title";
+    mapPin.coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+    [self.mapView addAnnotation:mapPin];
+    
+    NSLog(@"Pin Location");
+
+}
 @end
