@@ -7,8 +7,21 @@
 //
 
 #import "COProfileSettingsViewController.h"
+#include "COUser.h"
 
-@interface COProfileSettingsViewController ()
+@interface COProfileSettingsViewController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *avatarView;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *skillTextField;
+@property (weak, nonatomic) IBOutlet UITextField *levelTextField;
+@property (weak, nonatomic) IBOutlet UITextField *bioTextField;
+@property (weak, nonatomic) IBOutlet UITextField *genderTextField;
+@property (weak, nonatomic) IBOutlet UITextField *spokenLanguageTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *showMyProfileToMyGenderOnly;
+
+- (void)setupNavigationBar;
+
 
 @end
 
@@ -16,13 +29,74 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.nameTextField.delegate = self;
+    self.skillTextField.delegate = self;
+    self.levelTextField.delegate = self;
+    self.bioTextField.delegate = self;
+    self.genderTextField.delegate = self;
+    self.spokenLanguageTextField.delegate = self;
+
+    [self setupNavigationBar];
+    
+    self.avatarView.layer.cornerRadius = 80.0;
+    self.avatarView.clipsToBounds = YES;
+    self.avatarView.layer.borderColor = [UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0].CGColor;
+    self.avatarView.layer.borderWidth = 2.0;
+    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)setupNavigationBar {
+    
+    self.navigationItem.title = @"Settings";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped)];
+    
+//    self.navigationItem.leftBarButtonItem.tintColor = (__bridge UIColor * _Nullable)([UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0].CGColor);
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor greenColor];
+    
 }
+
+-(void)cancelButtonTapped{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Save button
+
+- (void)saveButtonTapped {
+    
+    COUser *user = (COUser *)[PFUser currentUser];
+    
+    //[user setValue:result[@"name"] forKey:@"name"];
+    
+   
+    user.name = self.nameTextField.text;
+    user.skill = self.skillTextField.text;
+    user.level = self.levelTextField.text;
+    user.bio = self.bioTextField.text;
+    user.gender = self.genderTextField.text;
+    user.spokenLanguage = self.spokenLanguageTextField.text;
+    user.showMyProfileToMyGenderOnly = self.showMyProfileToMyGenderOnly.on;
+
+    // Do I need this?
+    // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
+//    self.fileUploadBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+//        [[UIApplication sharedApplication] endBackgroundTask:self.fileUploadBackgroundTaskId];
+//    }];
+//    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [user saveInBackground];
+
+}
+
+
 
 /*
 #pragma mark - Navigation

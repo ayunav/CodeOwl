@@ -14,6 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *skillLabel;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
+@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spokenLanguageLabel;
 
 @end
 
@@ -23,6 +28,14 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"My Profile";
+    
+    self.avatarView.layer.cornerRadius = 80.0;
+    self.avatarView.clipsToBounds = YES;
+    self.avatarView.layer.borderColor = [UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0].CGColor;
+    self.avatarView.layer.borderWidth = 2.0;
+    
+
+    
     
     COUser *user = (COUser *)[PFUser currentUser];
     self.nameLabel.text = [user valueForKey:@"name"];
