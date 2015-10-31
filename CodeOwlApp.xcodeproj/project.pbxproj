@@ -15,6 +15,7 @@
 		290E03961BE4FECB00E544B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290E03941BE4FECB00E544B7 /* LaunchScreen.storyboard */; };
 		290E03A11BE4FECC00E544B7 /* CodeOwlAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03A01BE4FECC00E544B7 /* CodeOwlAppTests.m */; };
 		290E03AC1BE4FECC00E544B7 /* CodeOwlAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03AB1BE4FECC00E544B7 /* CodeOwlAppUITests.m */; };
+		7D6928B7F56D450BC9E41A3E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D733C1BAFEF69C98B4B55512 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		290E03A71BE4FECC00E544B7 /* CodeOwlAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeOwlAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		290E03AB1BE4FECC00E544B7 /* CodeOwlAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeOwlAppUITests.m; sourceTree = "<group>"; };
 		290E03AD1BE4FECC00E544B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA9A5E4A540DCF6335AEC7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B8015C29ED97DB7AE2CEEB84 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D733C1BAFEF69C98B4B55512 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6928B7F56D450BC9E41A3E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				290E039F1BE4FECC00E544B7 /* CodeOwlAppTests */,
 				290E03AA1BE4FECC00E544B7 /* CodeOwlAppUITests */,
 				290E03841BE4FECB00E544B7 /* Products */,
+				964A680C775CA2770AE579B6 /* Pods */,
+				D8DF0F27CC0162E741D38EE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +108,11 @@
 		290E03851BE4FECB00E544B7 /* CodeOwlApp */ = {
 			isa = PBXGroup;
 			children = (
+				290E038F1BE4FECB00E544B7 /* Main.storyboard */,
 				290E03891BE4FECB00E544B7 /* AppDelegate.h */,
 				290E038A1BE4FECB00E544B7 /* AppDelegate.m */,
 				290E038C1BE4FECB00E544B7 /* ViewController.h */,
 				290E038D1BE4FECB00E544B7 /* ViewController.m */,
-				290E038F1BE4FECB00E544B7 /* Main.storyboard */,
 				290E03921BE4FECB00E544B7 /* Assets.xcassets */,
 				290E03941BE4FECB00E544B7 /* LaunchScreen.storyboard */,
 				290E03971BE4FECB00E544B7 /* Info.plist */,
@@ -140,6 +147,23 @@
 			path = CodeOwlAppUITests;
 			sourceTree = "<group>";
 		};
+		964A680C775CA2770AE579B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AA9A5E4A540DCF6335AEC7F /* Pods.debug.xcconfig */,
+				B8015C29ED97DB7AE2CEEB84 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8DF0F27CC0162E741D38EE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D733C1BAFEF69C98B4B55512 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 290E03B01BE4FECC00E544B7 /* Build configuration list for PBXNativeTarget "CodeOwlApp" */;
 			buildPhases = (
+				BB60E5E68FC1BA4FA4128FC6 /* Check Pods Manifest.lock */,
 				290E037F1BE4FECB00E544B7 /* Sources */,
 				290E03801BE4FECB00E544B7 /* Frameworks */,
 				290E03811BE4FECB00E544B7 /* Resources */,
+				2C07DF94B2F532B0BAB75EF2 /* Embed Pods Frameworks */,
+				A63F853EC4FCC27867475B82 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C07DF94B2F532B0BAB75EF2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A63F853EC4FCC27867475B82 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB60E5E68FC1BA4FA4128FC6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		290E037F1BE4FECB00E544B7 /* Sources */ = {
@@ -412,6 +487,7 @@
 		};
 		290E03B11BE4FECC00E544B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AA9A5E4A540DCF6335AEC7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CodeOwlApp/Info.plist;
@@ -423,6 +499,7 @@
 		};
 		290E03B21BE4FECC00E544B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8015C29ED97DB7AE2CEEB84 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CodeOwlApp/Info.plist;
@@ -499,6 +576,7 @@
 				290E03B21BE4FECC00E544B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		290E03B31BE4FECC00E544B7 /* Build configuration list for PBXNativeTarget "CodeOwlAppTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +585,7 @@
 				290E03B51BE4FECC00E544B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		290E03B61BE4FECC00E544B7 /* Build configuration list for PBXNativeTarget "CodeOwlAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +594,7 @@
 				290E03B81BE4FECC00E544B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
