@@ -6,12 +6,13 @@
 //  Copyright © 2015 Ayuna Vogel. All rights reserved.
 //
 #import <Parse/Parse.h>
+#import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
 
 #import "COLoginViewController.h"
 #import "COUser.h"
 #import "COMyProfileViewController.h"
 
-@interface COLoginViewController () <FBSDKLoginButtonDelegate>
+@interface COLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
@@ -21,46 +22,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-
-    self.loginButton.delegate = self;
-    self.loginButton.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
     
-    //    [PFUser currentUser];
+     if (![PFUser currentUser]) {
+        [self showLogin];
+    } else {
+        [self showApp];
+    }
     
-    COUser *user = (COUser *)[PFUser currentUser];
-    user.name = @"Ayuna";
-    [user saveInBackground];
 }
 
-- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
-    
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
-    
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-        
-        COUser *user = (COUser *)[PFUser currentUser];
-        user.name = result[@"name"];
-   
-        UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-        [self presentViewController:tabBarController animated:YES completion:nil];
+- (void)showApp {
+    UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+    [self presentViewController:tabBarController animated:NO completion:nil];
+}
+
+- (void)showLogin {
+    [PFFacebookUtils logInInBackgroundWithReadPermissions: @[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email, gender, link"}];
+            
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                
+                COUser *user = (COUser *)[PFUser currentUser];
+                
+                [user setValue:result[@"name"] forKey:@"name"];
+                [user setValue:result[@"gender"] forKey:@"gender"];
+                [user setValue:result[@"email"] forKey:@"email"];
+                
+                // [user setValue:result[@"link"] forKey:@"link"];
+                
+                self.loginButton.hidden = YES;
+                
+                [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
+                    
+                    UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+                    [self presentViewController:tabBarController animated:YES completion:nil];
+                    
+                }];
+                
+            }];
+            
+        }
     }];
-    
-    
-
 
 }
 
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation
