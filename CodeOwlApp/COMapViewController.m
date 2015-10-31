@@ -26,10 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(40.7, -74);
-//    MKCoordinateSpan span = MKCoordinateSpanMake(0.8, 0.8);
-//    [self.mapView setRegion:MKCoordinateRegionMake(center, span)];
     
     //create location manager
     self.locationManager = [[CLLocationManager alloc]init];
@@ -52,7 +48,7 @@
 {
     
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.8, 0.8);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
     [self.mapView setRegion:MKCoordinateRegionMake(center, span)];
     self.mapView.zoomEnabled = true;
     self.mapView.scrollEnabled = true;
