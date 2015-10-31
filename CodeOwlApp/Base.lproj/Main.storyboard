@@ -208,9 +208,30 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atf-28-Puc">
                                 <rect key="frame" x="0.0" y="491" width="600" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKe-kv-ssf">
+                                        <rect key="frame" x="5" y="5" width="530" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="361-MP-F76">
+                                        <rect key="frame" x="555" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="JDE-Ao-LjT"/>
+                                            <constraint firstAttribute="width" constant="40" id="gie-Md-EVX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.62736136840000001" green="0.56016904680000001" blue="0.61589795709999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9qz-dz-RHd"/>
+                                    <constraint firstItem="uKe-kv-ssf" firstAttribute="leading" secondItem="atf-28-Puc" secondAttribute="leading" constant="5" id="FiA-D9-69l"/>
+                                    <constraint firstItem="uKe-kv-ssf" firstAttribute="top" secondItem="atf-28-Puc" secondAttribute="top" constant="5" id="Iyt-Ru-khq"/>
+                                    <constraint firstAttribute="trailing" secondItem="361-MP-F76" secondAttribute="trailing" constant="5" id="SZq-QS-y9g"/>
+                                    <constraint firstAttribute="bottom" secondItem="uKe-kv-ssf" secondAttribute="bottom" constant="5" id="boj-xV-NeF"/>
+                                    <constraint firstItem="361-MP-F76" firstAttribute="leading" secondItem="uKe-kv-ssf" secondAttribute="trailing" constant="20" id="cUF-2R-Ka8"/>
+                                    <constraint firstItem="361-MP-F76" firstAttribute="centerY" secondItem="atf-28-Puc" secondAttribute="centerY" id="l3X-aE-WpG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -226,6 +247,9 @@
                             <constraint firstItem="fg8-ph-5kO" firstAttribute="leading" secondItem="oE8-eY-AYc" secondAttribute="leadingMargin" id="kps-Uf-VRz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageTableView" destination="uKe-kv-ssf" id="v9y-EL-Xc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSE-QI-lfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
