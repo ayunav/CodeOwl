@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NkS-8K-2y2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NkS-8K-2y2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -39,11 +39,21 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-Hq-wNw">
+                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <animations/>
+                                <state key="normal" title="log in"/>
+                                <connections>
+                                    <action selector="loginButtonTapped" destination="i3b-E6-yOu" eventType="touchUpInside" id="XgP-Yb-eEk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="y3C-7b-yet" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="LsO-AE-NYi"/>
+                            <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mqR-XL-z97"/>
+                            <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="n4D-rW-sAD"/>
                             <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="y3C-7b-yet" secondAttribute="bottom" constant="63" id="uXp-yq-8qp"/>
                         </constraints>
                     </view>
@@ -533,7 +543,7 @@
         <!--Profile Settings View Controller-->
         <scene sceneID="Vsv-9g-ikX">
             <objects>
-                <viewController id="PfT-CV-Aru" userLabel="Profile Settings View Controller" customClass="COProfileSettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="COProfileSettingsViewController" id="PfT-CV-Aru" userLabel="Profile Settings View Controller" customClass="COProfileSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Wv-Cg-I7y"/>
                         <viewControllerLayoutGuide type="bottom" id="jTG-Wm-hD5"/>

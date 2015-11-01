@@ -8,6 +8,8 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ChameleonFramework/Chameleon.h>
+
 #import "COUser.h"
 
 #import "AppDelegate.h"
@@ -35,9 +37,10 @@
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
     
-    
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    //[Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatGreenColor] withContentStyle:UIContentStyleLight];
     
     //version 1
     //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:122.00/255.0 green:193.00/255.0 blue:67.00/255.0 alpha:1.0]];

@@ -24,12 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     if (![PFUser currentUser]) {
-        [self showLogin];
-    } else {
-        [self showApp];
-    }
+//     if (![PFUser currentUser]) {
+//        [self showLogin];
+//    } else {
+//        [self showApp];
+//    }
     
+}
+
+- (IBAction)loginButtonTapped {
+    [self showLogin];
 }
 
 - (void)showApp {
@@ -62,7 +66,7 @@
                 self.loginButton.hidden = YES;
                 
                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
-                    
+//                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"COProfileSettingsViewController"]];
                     UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
                     [self presentViewController:tabBarController animated:YES completion:nil];
                     

@@ -16,15 +16,15 @@
 		290E03961BE4FECB00E544B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290E03941BE4FECB00E544B7 /* LaunchScreen.storyboard */; };
 		290E03A11BE4FECC00E544B7 /* CodeOwlAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03A01BE4FECC00E544B7 /* CodeOwlAppTests.m */; };
 		290E03AC1BE4FECC00E544B7 /* CodeOwlAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03AB1BE4FECC00E544B7 /* CodeOwlAppUITests.m */; };
-		290E03BB1BE506DA00E544B7 /* COLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03BA1BE506DA00E544B7 /* COLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03BE1BE506FD00E544B7 /* COMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03BD1BE506FD00E544B7 /* COMyProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03C11BE5070F00E544B7 /* COProfileSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C01BE5070F00E544B7 /* COProfileSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03C41BE5076A00E544B7 /* COMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C31BE5076A00E544B7 /* COMapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03C71BE5078F00E544B7 /* COOtherUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03CA1BE507D000E544B7 /* COAllMessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C91BE507D000E544B7 /* COAllMessagesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03CD1BE507F200E544B7 /* COChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03CC1BE507F200E544B7 /* COChatViewController.m */; settings = {ASSET_TAGS = (); }; };
-		290E03D01BE5166B00E544B7 /* COUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03CF1BE5166B00E544B7 /* COUser.m */; settings = {ASSET_TAGS = (); }; };
-		292282001BE5AD8800658C97 /* COTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292281FF1BE5AD8800658C97 /* COTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		290E03BB1BE506DA00E544B7 /* COLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03BA1BE506DA00E544B7 /* COLoginViewController.m */; };
+		290E03BE1BE506FD00E544B7 /* COMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03BD1BE506FD00E544B7 /* COMyProfileViewController.m */; };
+		290E03C11BE5070F00E544B7 /* COProfileSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C01BE5070F00E544B7 /* COProfileSettingsViewController.m */; };
+		290E03C41BE5076A00E544B7 /* COMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C31BE5076A00E544B7 /* COMapViewController.m */; };
+		290E03C71BE5078F00E544B7 /* COOtherUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */; };
+		290E03CA1BE507D000E544B7 /* COAllMessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03C91BE507D000E544B7 /* COAllMessagesTableViewController.m */; };
+		290E03CD1BE507F200E544B7 /* COChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03CC1BE507F200E544B7 /* COChatViewController.m */; };
+		290E03D01BE5166B00E544B7 /* COUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 290E03CF1BE5166B00E544B7 /* COUser.m */; };
+		292282001BE5AD8800658C97 /* COTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292281FF1BE5AD8800658C97 /* COTabBarController.m */; };
 		7D6928B7F56D450BC9E41A3E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D733C1BAFEF69C98B4B55512 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -546,6 +546,7 @@
 			baseConfigurationReference = 4AA9A5E4A540DCF6335AEC7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CodeOwlApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayunavogel.CodeOwlApp;
@@ -558,6 +559,7 @@
 			baseConfigurationReference = B8015C29ED97DB7AE2CEEB84 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CodeOwlApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayunavogel.CodeOwlApp;
