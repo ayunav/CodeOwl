@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.loginButton.hidden = YES;
+    
 //     if (![PFUser currentUser]) {
 //        [self showLogin];
 //    } else {
