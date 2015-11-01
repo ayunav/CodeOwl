@@ -29,6 +29,7 @@
     [Parse setApplicationId:@"vVCbBO1t6tRe2w1AkohILzXYvRZ0HvtXBq3k9awo"
                   clientKey:@"K2rM55TC2TNjiAmJNWTyQjCsviIhl2Cj4BLbWlD4"];
     
+    
     [COUser registerSubclass];
     
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
