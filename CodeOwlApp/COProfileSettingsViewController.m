@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
 @property (weak, nonatomic) IBOutlet UITextField *spokenLanguageTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *showMyProfileToMyGenderOnly;
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 
 - (void)setupNavigationBar;
 
@@ -49,8 +48,6 @@
     self.avatarView.layer.borderWidth = 2.0;
     
 
-    //self.logOutButton.backgroundColor = [UIColor lightGrayColor];
-    //self.logOutButton.titleLabel.textColor = [UIColor blackColor];
 }
 
 

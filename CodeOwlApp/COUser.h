@@ -7,9 +7,8 @@
 //
 
 #import <Parse/Parse.h>
-@import MapKit;
 
-@interface COUser : PFUser <PFSubclassing, MKAnnotation>
+@interface COUser : PFUser <PFSubclassing>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *skill;

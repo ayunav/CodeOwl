@@ -26,7 +26,7 @@
 
     COUser *user = [[COUser alloc] init];
     
-    [self.messagingUsers addObject:user];
+    [self.messagingUsers addObject:user.name];
   
 }
 
