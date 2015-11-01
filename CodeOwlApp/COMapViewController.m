@@ -9,13 +9,13 @@
 #import "COMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <ChameleonFramework/Chameleon.h>
+//#import <ChameleonFramework/Chameleon.h>
 #import <Parse/Parse.h>
 #import "COUser.h"
 #import "COAllMessagesTableViewController.h"
 #import "COChatViewController.h"
 
-@interface COMapViewController ()
+@interface COMapViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationManager *locationManager;
@@ -65,6 +65,8 @@
     [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
     [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
 
+    self.mapView.delegate = self;
+    
     [self fetchAllUsers];
 
 }
@@ -85,18 +87,36 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
 - (void)navigateToChatWithUser {
   
-    COAllMessagesTableViewController *allMessagesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatsTableViewController"];
-    COChatViewController *chatVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatViewController"];
+//    COAllMessagesTableViewController *allMessagesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AllChatVC"];
+//    COChatViewController *chatVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatViewController"];
+//
+//    UINavigationController *navigation = [self.tabBarController.viewControllers lastObject];
+//
+//    [navigation setViewControllers:@[allMessagesVC, chatVC]];
+//    [self.tabBarController setSelectedIndex:2];
+    
+    
+    
+}
 
-    UINavigationController *navigation = [self.tabBarController.viewControllers lastObject];
-
-    [navigation setViewControllers:@[allMessagesVC, chatVC]];
-    [self.tabBarController setSelectedIndex:2];
+- (void)fetchAllUsers {
     
+    PFQuery *query = [PFQuery queryWithClassName:[COUser parseClassName]];
     
-    
+    // Source: https://parse.com/questions/fetch-all-data-in-a-table-using-pfquery
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            [self.mapView addAnnotations:objects];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 -(UITabBarItem *)tabBarItem {
