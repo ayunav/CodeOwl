@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "COUser.h"
 
 @interface COChatViewController : UIViewController
+
+@property (nonatomic) COUser *user;
 
 @end

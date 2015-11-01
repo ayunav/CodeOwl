@@ -45,9 +45,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageIdentifier" forIndexPath:indexPath];
     
-    COUser *userMessage = self.messagesArray[indexPath.row];
+//    COUser *userMessage = self.messagesArray[indexPath.row];
     //[COUser] set up property "messages"
-    cell.textLabel.text = userMessage.message;
+    cell.textLabel.text = @"Fuck This";
+//    cell.textLabel.text = userMessage.messages;
 
     return cell;
 }
@@ -59,14 +60,13 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//}
+
 
 @end

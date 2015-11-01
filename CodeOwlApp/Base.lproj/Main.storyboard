@@ -168,11 +168,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagingUserCell" id="lIa-97-9dS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="messagingUserCell" id="lIa-97-9dS">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lIa-97-9dS" id="Jbx-rX-GQb">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -258,7 +258,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="messageTableView" destination="uKe-kv-ssf" id="v9y-EL-Xc3"/>
+                        <outlet property="messageTableView" destination="fg8-ph-5kO" id="bzl-Md-xo4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSE-QI-lfh" userLabel="First Responder" sceneMemberID="firstResponder"/>

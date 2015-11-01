@@ -18,7 +18,7 @@
 @dynamic spokenLanguage;
 @dynamic avatar;
 @dynamic showMyProfileToMyGenderOnly;
-@dynamic message;
+@dynamic messages;
 @dynamic location;
 
 //https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfp/MKAnnotation/coordinate
