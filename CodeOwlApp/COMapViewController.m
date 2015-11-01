@@ -17,6 +17,8 @@
 
 @property (nonatomic) BOOL firstTime;
 
+@property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
+
 - (IBAction)showMyLocationButton:(id)sender;
 
 
@@ -36,12 +38,11 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     [self.locationManager startUpdatingLocation];
+    
+    
+    self.showMyLocationButton.tintColor = [UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]; 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)locationManager:(CLLocationManager * _Nonnull)manager
      didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations

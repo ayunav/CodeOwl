@@ -35,7 +35,7 @@
     self.avatarView.layer.borderWidth = 2.0;
     
 
-    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
     
     COUser *user = (COUser *)[PFUser currentUser];
     self.nameLabel.text = [user valueForKey:@"name"];
