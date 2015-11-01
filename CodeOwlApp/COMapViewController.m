@@ -22,6 +22,7 @@
 
 - (IBAction)showMyLocationButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
 
 @end
 
@@ -43,6 +44,12 @@
     
     self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.showMyLocationButton.tintColor = [UIColor greenColor];
+    
+    
+    self.feliciaButtonP.layer.cornerRadius = 30;
+    self.feliciaButtonP.clipsToBounds = YES;
+    self.feliciaButtonP.layer.borderWidth = 1;
+    self.feliciaButtonP.layer.borderColor = [UIColor greenColor].CGColor;
     //UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //[self.showMyLocationButton setTintColor:[UIColor whiteColor]];
     
@@ -113,6 +120,9 @@
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 
+}
+
+- (IBAction)feliciaButton:(id)sender {
 }
 
 

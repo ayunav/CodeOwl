@@ -135,21 +135,44 @@
                                     <action selector="showMyLocationButton:" destination="Z8H-ty-7QS" eventType="touchUpInside" id="Fgo-oE-3sg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k1-xw-hIO" userLabel="felicia">
+                                <rect key="frame" x="448" y="198" width="60" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6pj-j4-m1G"/>
+                                    <constraint firstAttribute="width" constant="60" id="PDt-5y-fiX"/>
+                                </constraints>
+                                <state key="normal" image="fweat"/>
+                                <connections>
+                                    <action selector="feliciaButton:" destination="Z8H-ty-7QS" eventType="touchUpInside" id="iLK-Iw-VU1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5A6-7G-Fnk" firstAttribute="top" secondItem="9A0-bB-PkU" secondAttribute="bottom" constant="15" id="20h-Sh-jJK"/>
+                            <constraint firstItem="4k1-xw-hIO" firstAttribute="top" secondItem="B1P-OW-ncG" secondAttribute="bottom" constant="178" id="HCx-0u-ZHB"/>
                             <constraint firstAttribute="trailing" secondItem="2eh-4K-bUq" secondAttribute="trailing" id="Mqe-xT-VjL"/>
+                            <constraint firstItem="5A6-7G-Fnk" firstAttribute="top" secondItem="4k1-xw-hIO" secondAttribute="bottom" constant="327" id="apd-3v-JqK"/>
                             <constraint firstItem="5A6-7G-Fnk" firstAttribute="top" secondItem="2eh-4K-bUq" secondAttribute="bottom" id="b2d-fO-uTI"/>
                             <constraint firstItem="2eh-4K-bUq" firstAttribute="top" secondItem="B1P-OW-ncG" secondAttribute="bottom" id="bED-oH-x9J"/>
                             <constraint firstItem="2eh-4K-bUq" firstAttribute="leading" secondItem="qUE-mT-Gk3" secondAttribute="leading" id="deK-iO-8r0"/>
+                            <constraint firstItem="4k1-xw-hIO" firstAttribute="leading" secondItem="qUE-mT-Gk3" secondAttribute="leadingMargin" constant="460" id="kHd-IP-nVu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4k1-xw-hIO" secondAttribute="trailing" constant="72" id="urc-ho-ato"/>
                             <constraint firstAttribute="trailing" secondItem="9A0-bB-PkU" secondAttribute="trailing" constant="15" id="wkA-al-sPt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kHd-IP-nVu"/>
+                                <exclude reference="apd-3v-JqK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="locationCircle32" selectedImage="maps32" id="Ev7-mP-bU4"/>
                     <connections>
-                        <outlet property="mapView" destination="2eh-4K-bUq" id="wxZ-X8-TRK"/>
+                        <outlet property="feliciaButtonP" destination="4k1-xw-hIO" id="IG6-Xf-msd"/>
+                        <outlet property="mapView" destination="2eh-4K-bUq" id="KLH-va-xur"/>
                         <outlet property="showMyLocationButton" destination="9A0-bB-PkU" id="0fY-OB-shL"/>
                     </connections>
                 </viewController>
@@ -731,6 +754,7 @@
     </scenes>
     <resources>
         <image name="Settings-25" width="25" height="25"/>
+        <image name="fweat" width="480" height="480"/>
         <image name="locationCircle32" width="32" height="32"/>
         <image name="maps32" width="32" height="32"/>
         <image name="messageCircle32" width="32" height="32"/>

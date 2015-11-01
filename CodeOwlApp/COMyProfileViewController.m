@@ -42,6 +42,7 @@
     //    COUser *user = (COUser *)[PFUser currentUser];
     //    self.nameLabel.text = [user username];
     
+    // got code from stack overflow: http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{ @"fields" : @"id,name,picture.width(100).height(100)"}]startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if (!error) {
