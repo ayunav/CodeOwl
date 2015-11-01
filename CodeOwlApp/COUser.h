@@ -7,8 +7,9 @@
 //
 
 #import <Parse/Parse.h>
+@import MapKit;
 
-@interface COUser : PFUser <PFSubclassing>
+@interface COUser : PFUser <PFSubclassing, MKAnnotation>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *skill;
@@ -19,5 +20,6 @@
 @property (nonatomic, strong) PFFile *avatar;
 @property (nonatomic) BOOL showMyProfileToMyGenderOnly;
 @property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) PFGeoPoint *location;
 
 @end

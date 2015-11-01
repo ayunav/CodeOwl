@@ -19,5 +19,17 @@
 @dynamic avatar;
 @dynamic showMyProfileToMyGenderOnly;
 @dynamic message;
+@dynamic location;
+
+//https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfp/MKAnnotation/coordinate
+
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake(self.location.latitude, self.location.longitude);
+}
+
+- (NSString *)title
+{
+    return self.name;
+}
 
 @end

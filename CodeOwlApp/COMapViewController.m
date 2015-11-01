@@ -10,8 +10,10 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <ChameleonFramework/Chameleon.h>
+#import <Parse/Parse.h>
+#import "COUser.h"
 
-@interface COMapViewController ()
+@interface COMapViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationManager *locationManager;
@@ -29,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mapView.delegate = self;
     
     //create location manager
     self.locationManager = [[CLLocationManager alloc]init];
@@ -57,7 +61,44 @@
 //    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
 //    [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
 
+    [self fetchAllUsers];
+
 }
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)fetchAllUsers {
+    
+    PFQuery *query = [PFQuery queryWithClassName:[COUser parseClassName]];
+
+    // Source: https://parse.com/questions/fetch-all-data-in-a-table-using-pfquery
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            [self.mapView addAnnotations:objects];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+    
+
 
 //-(UITabBarItem *)tabBarItem {
 //    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
@@ -85,24 +126,24 @@
 - (IBAction)showMyLocationButton:(id)sender {
     
     
-    MKPointAnnotation *mapPin = [[MKPointAnnotation alloc]init];
-    mapPin.title = @"The Location";
-    //    mapPin.subtitle = @"Sub-title";
-    mapPin.coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
-    [self.mapView addAnnotation:mapPin];
+//    MKPointAnnotation *mapPin = [[MKPointAnnotation alloc]init];
+//    mapPin.title = @"The Location";
+//    //    mapPin.subtitle = @"Sub-title";
+//    mapPin.coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+//    [self.mapView addAnnotation:mapPin];
+//    
+//    NSLog(@"Pin Location");
     
-    NSLog(@"Pin Location");
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+//                                                                   message:@"This is an alert."
+//                                                            preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
+//                                                            style:UIAlertActionStyleDefault
+//                                                          handler:^(UIAlertAction * action) {}];
+//    
+//    [alert addAction:defaultAction];
+//    [self presentViewController:alert animated:YES completion:nil];
 
 }
 @end
