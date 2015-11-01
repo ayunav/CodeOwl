@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spokenLanguageLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
 @end
 
@@ -35,7 +36,8 @@
     self.avatarView.layer.borderWidth = 2.0;
     
 
-    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    self.settingsButton.tintColor = [UIColor whiteColor];
     
     COUser *user = (COUser *)[PFUser currentUser];
     self.nameLabel.text = [user valueForKey:@"name"];

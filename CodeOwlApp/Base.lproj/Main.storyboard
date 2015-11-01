@@ -146,9 +146,10 @@
                             <constraint firstAttribute="trailing" secondItem="9A0-bB-PkU" secondAttribute="trailing" constant="15" id="wkA-al-sPt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="maps32" selectedImage="maps32" id="Ev7-mP-bU4"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="locationCircle32" selectedImage="maps32" id="Ev7-mP-bU4"/>
                     <connections>
                         <outlet property="mapView" destination="2eh-4K-bUq" id="wxZ-X8-TRK"/>
+                        <outlet property="showMyLocationButton" destination="9A0-bB-PkU" id="0fY-OB-shL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fer-Xk-CkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,7 +264,7 @@
         <scene sceneID="iTY-rG-PKG">
             <objects>
                 <navigationController id="mBA-dO-tgE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="message32" id="caB-bh-O67"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messageCircle32" id="caB-bh-O67"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uO9-ka-Ash">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -326,7 +327,7 @@
                                     <constraint firstAttribute="height" constant="60" id="eGn-Hb-Lmp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-qZ-ioR" userLabel="Skill Level View">
@@ -339,7 +340,7 @@
                                                 <rect key="frame" x="0.0" y="19" width="231" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -360,7 +361,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="IDR-oh-0Bt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -395,7 +396,7 @@
                                                 <rect key="frame" x="8" y="19" width="231" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -412,7 +413,7 @@
                                                     <constraint firstAttribute="width" constant="231" id="tVn-av-avR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -453,7 +454,7 @@
                                 <rect key="frame" x="271" y="259" width="59" height="27"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -496,6 +497,7 @@
                         <outlet property="genderLabel" destination="e01-hl-6gg" id="gMZ-L7-Z6i"/>
                         <outlet property="levelLabel" destination="n7L-fa-X53" id="9jn-Pd-8Wa"/>
                         <outlet property="nameLabel" destination="338-FS-PUO" id="VnY-GG-jPd"/>
+                        <outlet property="settingsButton" destination="t2J-7s-3oh" id="rsR-QX-Dvb"/>
                         <outlet property="skillLabel" destination="Ser-tI-KvQ" id="3rn-bx-Jle"/>
                         <outlet property="spokenLanguageLabel" destination="i7H-yu-woI" id="kzS-1Q-evr"/>
                     </connections>
@@ -659,7 +661,7 @@
                                 <rect key="frame" x="40" y="492" width="463" height="31"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -721,8 +723,9 @@
     </scenes>
     <resources>
         <image name="Settings-25" width="25" height="25"/>
+        <image name="locationCircle32" width="32" height="32"/>
         <image name="maps32" width="32" height="32"/>
-        <image name="message32" width="32" height="32"/>
+        <image name="messageCircle32" width="32" height="32"/>
         <image name="near_me32" width="32" height="32"/>
         <image name="profile32" width="32" height="32"/>
     </resources>

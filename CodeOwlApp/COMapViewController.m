@@ -18,6 +18,8 @@
 
 @property (nonatomic) BOOL firstTime;
 
+@property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
+
 - (IBAction)showMyLocationButton:(id)sender;
 
 
@@ -37,11 +39,19 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     [self.locationManager startUpdatingLocation];
+    
+    
+    self.showMyLocationButton.tintColor = [UIColor whiteColor];
+    //[[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0].CGColor];
+    //    [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+
+    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
+    [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(UITabBarItem *)tabBarItem {
+    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
 }
 
 - (void)locationManager:(CLLocationManager * _Nonnull)manager
