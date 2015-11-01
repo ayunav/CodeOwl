@@ -8,6 +8,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "COUser.h"
 
 #import "AppDelegate.h"
 
@@ -28,7 +29,11 @@
     [Parse setApplicationId:@"vVCbBO1t6tRe2w1AkohILzXYvRZ0HvtXBq3k9awo"
                   clientKey:@"K2rM55TC2TNjiAmJNWTyQjCsviIhl2Cj4BLbWlD4"];
     
+    [COUser registerSubclass];
+    
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    
+    
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
