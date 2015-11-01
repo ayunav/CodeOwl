@@ -50,7 +50,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messagingUserCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"FUCK";
+    cell.textLabel.text = @"Messages";
     return cell;
 }
 

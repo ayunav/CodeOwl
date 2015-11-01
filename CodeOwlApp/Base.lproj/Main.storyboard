@@ -34,28 +34,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-Hq-wNw">
+                                <rect key="frame" x="279" y="448" width="42" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="loginButtonTapped" destination="i3b-E6-yOu" eventType="touchUpInside" id="XgP-Yb-eEk"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-7b-yet" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="277" y="507" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-Hq-wNw">
-                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-sp-PJN">
+                                <rect key="frame" x="140" y="196" width="320" height="208"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodeOwl" translatesAutoresizingMaskIntoConstraints="NO" id="QVp-R1-YhG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                                <state key="normal" title="log in"/>
-                                <connections>
-                                    <action selector="loginButtonTapped" destination="i3b-E6-yOu" eventType="touchUpInside" id="XgP-Yb-eEk"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QVp-R1-YhG" secondAttribute="trailing" id="Utl-d7-eb7"/>
+                                    <constraint firstItem="QVp-R1-YhG" firstAttribute="top" secondItem="IHa-sp-PJN" secondAttribute="top" id="ar5-DP-Jn6"/>
+                                    <constraint firstAttribute="bottom" secondItem="QVp-R1-YhG" secondAttribute="bottom" id="hJS-wv-7Cw"/>
+                                    <constraint firstAttribute="width" constant="320" id="rE5-fn-A1j"/>
+                                    <constraint firstAttribute="height" constant="208" id="xcn-dr-nnY"/>
+                                    <constraint firstItem="QVp-R1-YhG" firstAttribute="leading" secondItem="IHa-sp-PJN" secondAttribute="leading" id="xrc-E3-WDK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="5Oi-Uk-tpk"/>
                             <constraint firstItem="y3C-7b-yet" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="LsO-AE-NYi"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leading" constant="180" id="Pdw-ar-lgd"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="UBo-e4-VbH"/>
+                            <constraint firstItem="y3C-7b-yet" firstAttribute="top" secondItem="IHa-sp-PJN" secondAttribute="bottom" constant="31" id="XWp-U7-WrV"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="bS5-mg-UsK"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="hju-Dp-X6k"/>
+                            <constraint firstItem="y3C-7b-yet" firstAttribute="top" secondItem="LfA-Hq-wNw" secondAttribute="bottom" constant="29" id="hus-8d-a6E"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mLs-AE-Iwr"/>
                             <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mqR-XL-z97"/>
                             <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="n4D-rW-sAD"/>
+                            <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="o4y-jS-0eF"/>
                             <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="y3C-7b-yet" secondAttribute="bottom" constant="63" id="uXp-yq-8qp"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="v0B-Dy-fxi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Oi-Uk-tpk"/>
+                                <exclude reference="Pdw-ar-lgd"/>
+                                <exclude reference="UBo-e4-VbH"/>
+                                <exclude reference="bS5-mg-UsK"/>
+                                <exclude reference="mLs-AE-Iwr"/>
+                                <exclude reference="mqR-XL-z97"/>
+                                <exclude reference="n4D-rW-sAD"/>
+                                <exclude reference="XWp-U7-WrV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dkE-5N-Dz2"/>
                     <connections>
@@ -767,6 +808,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CodeOwl" width="512" height="119"/>
         <image name="Settings-25" width="25" height="25"/>
         <image name="fweat" width="480" height="480"/>
         <image name="locationCircle32" width="32" height="32"/>
