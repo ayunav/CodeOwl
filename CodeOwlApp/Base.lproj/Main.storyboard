@@ -218,7 +218,7 @@
         <!--Chat View Controller-->
         <scene sceneID="zjf-QS-MvG">
             <objects>
-                <viewController id="LNU-hj-iNk" userLabel="Chat View Controller" customClass="COChatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" id="LNU-hj-iNk" userLabel="Chat View Controller" customClass="COChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZvW-Px-ZxF"/>
                         <viewControllerLayoutGuide type="bottom" id="ZkK-d8-T9h"/>

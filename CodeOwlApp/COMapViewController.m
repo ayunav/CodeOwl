@@ -9,7 +9,11 @@
 #import "COMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <ChameleonFramework/Chameleon.h>
+#import <Parse/Parse.h>
+#import "COUser.h"
 #import "COAllMessagesTableViewController.h"
+#import "COChatViewController.h"
 
 @interface COMapViewController ()
 
@@ -61,6 +65,38 @@
     [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
     [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
 
+    [self fetchAllUsers];
+
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self navigateToChatWithUser];
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+- (void)navigateToChatWithUser {
+  
+    COAllMessagesTableViewController *allMessagesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatsTableViewController"];
+    COChatViewController *chatVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatViewController"];
+
+    UINavigationController *navigation = [self.tabBarController.viewControllers lastObject];
+
+    [navigation setViewControllers:@[allMessagesVC, chatVC]];
+    [self.tabBarController setSelectedIndex:2];
+    
+    
+    
 }
 
 -(UITabBarItem *)tabBarItem {
