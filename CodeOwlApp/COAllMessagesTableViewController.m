@@ -20,8 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.messagingUsers = [NSMutableArray array];
 
     COUser *user = [[COUser alloc] init];
+    
+    [self.messagingUsers addObject:user.name];
+  
+  
    
 }
 
@@ -32,23 +38,22 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+   
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return self.messagingUsers.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messagingUserCell" forIndexPath:indexPath];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
