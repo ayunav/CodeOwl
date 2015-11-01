@@ -9,14 +9,25 @@
 #import "COOtherUserProfileViewController.h"
 
 @interface COOtherUserProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIView *avatarView;
 
+@property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 @end
 
 @implementation COOtherUserProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.avatarView.layer.cornerRadius = 80.0;
+    self.avatarView.clipsToBounds = YES;
+    self.avatarView.layer.borderColor = [UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0].CGColor;
+    self.avatarView.layer.borderWidth = 2.0;
+
+    self.sendMessageButton.backgroundColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
+    self.sendMessageButton.titleLabel.textColor = [UIColor blackColor];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
