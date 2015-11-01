@@ -126,10 +126,11 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <animations/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-bB-PkU" userLabel="right button">
-                                <rect key="frame" x="553" y="504" width="32" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-bB-PkU" userLabel="right button">
+                                <rect key="frame" x="537" y="488" width="48" height="48"/>
                                 <animations/>
-                                <state key="normal" image="near_me32"/>
+                                <color key="tintColor" red="0.0" green="0.80000000000000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="near_me48"/>
                                 <connections>
                                     <action selector="showMyLocationButton:" destination="Z8H-ty-7QS" eventType="touchUpInside" id="Fgo-oE-3sg"/>
                                 </connections>
@@ -664,6 +665,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-bn-b33">
+                                <rect key="frame" x="273" y="555" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -674,6 +680,7 @@
                             <constraint firstItem="nyD-K0-Qyi" firstAttribute="top" secondItem="szq-Rc-PdJ" secondAttribute="bottom" constant="15" id="FJE-sV-f6K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="szq-Rc-PdJ" secondAttribute="trailing" constant="20" id="HUc-f9-vJn"/>
                             <constraint firstItem="DkB-nO-ZPp" firstAttribute="top" secondItem="1Wv-Cg-I7y" secondAttribute="bottom" constant="20" id="KfQ-pB-Pc3"/>
+                            <constraint firstItem="uWD-bn-b33" firstAttribute="centerX" secondItem="ysK-Pk-zxF" secondAttribute="centerX" id="LdV-Jp-lVr"/>
                             <constraint firstItem="4p9-aO-AxZ" firstAttribute="leading" secondItem="ysK-Pk-zxF" secondAttribute="leadingMargin" constant="20" id="QtE-fx-akv"/>
                             <constraint firstItem="nyD-K0-Qyi" firstAttribute="leading" secondItem="huq-hw-j3S" secondAttribute="trailing" constant="8" id="Qvi-Ji-utx"/>
                             <constraint firstItem="huq-hw-j3S" firstAttribute="centerY" secondItem="nyD-K0-Qyi" secondAttribute="centerY" id="Rnx-Ag-dgx"/>
@@ -682,6 +689,7 @@
                             <constraint firstItem="szq-Rc-PdJ" firstAttribute="top" secondItem="4p9-aO-AxZ" secondAttribute="bottom" constant="15" id="WxM-v7-SDB"/>
                             <constraint firstItem="gtN-ya-H9c" firstAttribute="centerX" secondItem="ysK-Pk-zxF" secondAttribute="centerX" id="cI6-If-PFz"/>
                             <constraint firstItem="Vjn-NR-Ln1" firstAttribute="top" secondItem="DkB-nO-ZPp" secondAttribute="bottom" constant="15" id="dvh-cY-eSL"/>
+                            <constraint firstItem="jTG-Wm-hD5" firstAttribute="top" secondItem="uWD-bn-b33" secondAttribute="bottom" constant="15" id="eAU-LD-5AD"/>
                             <constraint firstItem="jTG-Wm-hD5" firstAttribute="top" secondItem="huq-hw-j3S" secondAttribute="bottom" constant="82" id="eKe-nU-PLE"/>
                             <constraint firstItem="szq-Rc-PdJ" firstAttribute="top" secondItem="4p9-aO-AxZ" secondAttribute="bottom" constant="31" id="fJd-OA-9yM"/>
                             <constraint firstItem="nyD-K0-Qyi" firstAttribute="leading" secondItem="huq-hw-j3S" secondAttribute="trailing" constant="32" id="na9-G4-GlI"/>
@@ -726,7 +734,7 @@
         <image name="locationCircle32" width="32" height="32"/>
         <image name="maps32" width="32" height="32"/>
         <image name="messageCircle32" width="32" height="32"/>
-        <image name="near_me32" width="32" height="32"/>
+        <image name="near_me48" width="48" height="48"/>
         <image name="profile32" width="32" height="32"/>
     </resources>
 </document>

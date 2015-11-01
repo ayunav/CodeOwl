@@ -40,7 +40,13 @@
     [self.locationManager startUpdatingLocation];
     
     
-    self.showMyLocationButton.tintColor = [UIColor whiteColor];
+    self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.showMyLocationButton.tintColor = [UIColor greenColor];
+    //UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[self.showMyLocationButton setTintColor:[UIColor whiteColor]];
+    
+    //[self.showMyLocationButton setTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+    
     //[[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0].CGColor];
     //    [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
 
