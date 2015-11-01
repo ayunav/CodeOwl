@@ -43,6 +43,13 @@
     //don't like this
     //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
     
+    // version 1 lighter green color
+    //[[UITabBar appearance] setTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+    // version 2 darker green color not a big differnce
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
+
+    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+    tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
     
     return YES;
 }
