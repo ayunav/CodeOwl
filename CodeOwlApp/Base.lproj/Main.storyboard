@@ -290,7 +290,7 @@
                             <outlet property="delegate" destination="6ma-Ve-aZ0" id="OTq-zl-Ovs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4ha-Wg-dXt"/>
+                    <navigationItem key="navigationItem" id="4ha-Wg-dXt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNE-HY-B8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
