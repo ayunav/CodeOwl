@@ -30,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    
+    
     self.nameTextField.delegate = self;
     self.skillTextField.delegate = self;
     self.levelTextField.delegate = self;
@@ -53,10 +56,9 @@
     self.navigationItem.title = @"Settings";
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor darkGrayColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped)];
-    
-//    self.navigationItem.leftBarButtonItem.tintColor = (__bridge UIColor * _Nullable)([UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0].CGColor);
-    self.navigationItem.rightBarButtonItem.tintColor = [UIColor greenColor];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
     
 }
 
