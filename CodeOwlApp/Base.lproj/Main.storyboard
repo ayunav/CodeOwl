@@ -158,7 +158,7 @@
         <!--All Messages Table View Controller-->
         <scene sceneID="nQv-2l-wFm">
             <objects>
-                <tableViewController id="6ma-Ve-aZ0" userLabel="All Messages Table View Controller" customClass="COAllMessagesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllMessagesTVC" id="6ma-Ve-aZ0" userLabel="All Messages Table View Controller" customClass="COAllMessagesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xek-wJ-vn3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

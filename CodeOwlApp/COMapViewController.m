@@ -9,6 +9,7 @@
 #import "COMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "COAllMessagesTableViewController.h"
 
 @interface COMapViewController ()
 
@@ -72,16 +73,43 @@
     
     NSLog(@"Pin Location");
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Info"
+                                  message:@"You are using UIAlertController"
+                                  preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+//    UIAlertController *alert = [UIAlertControllerStyleAlert a
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+//                                                                   message:@"This is an alert."
+//                                                            preferredStyle:UIAlertControllerStyleAlert];
+//    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              NSLog(@"before");
+                                                              COAllMessagesTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier: @"AllMessagesTVC"];
+                                                              NSLog(@"middle");
+                                                              [self presentViewController:vc animated:YES completion:nil];}];
     
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) { NSLog(@"yay");
+                                                          }];
     [alert addAction:defaultAction];
+    [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 
 }
+
+
+//-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    NSLog(@"before");
+//    if (buttonIndex != alertView.cancelButtonIndex)
+//    {
+//        // self.storyboard instantiateViewControllerWithIdentifier
+//        COAllMessagesTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier: @"AllMessagesTVC"];
+//        [self presentViewController:vc animated:YES completion:nil];
+//        NSLog(@"inside");
+//
+//    }
+//}
 @end
