@@ -259,6 +259,9 @@
                                             <constraint firstAttribute="width" constant="40" id="gie-Md-EVX"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="sendMessageButtonTapped:" destination="LNU-hj-iNk" eventType="touchUpInside" id="H67-6y-cHs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -288,6 +291,7 @@
                     </view>
                     <connections>
                         <outlet property="messageTableView" destination="fg8-ph-5kO" id="bzl-Md-xo4"/>
+                        <outlet property="messageTextField" destination="uKe-kv-ssf" id="azr-Yc-bXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSE-QI-lfh" userLabel="First Responder" sceneMemberID="firstResponder"/>

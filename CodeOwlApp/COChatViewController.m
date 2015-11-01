@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSMutableArray *messagesArray;
 
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
+
 @end
 
 @implementation COChatViewController
@@ -24,8 +26,8 @@
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
 }
-- (IBAction)sendTextTapped:(id)sender {
-    
+
+- (IBAction)sendMessageButtonTapped:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {
