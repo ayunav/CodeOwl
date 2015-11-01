@@ -8,6 +8,8 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ChameleonFramework/Chameleon.h>
+
 #import "COUser.h"
 
 #import "AppDelegate.h"
@@ -44,7 +46,7 @@
 
     // version 2. I like this.
     //  73 G: 169 B: 66
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
 
     //don't like this
     //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
@@ -56,6 +58,9 @@
 
     UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
     tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
+    
+    
+    [Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatGreenColor] withContentStyle:UIContentStyleLight];
     
     return YES;
 }

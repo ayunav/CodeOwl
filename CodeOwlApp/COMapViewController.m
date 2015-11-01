@@ -9,6 +9,7 @@
 #import "COMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <ChameleonFramework/Chameleon.h>
 
 @interface COMapViewController ()
 
@@ -39,10 +40,13 @@
     }
     [self.locationManager startUpdatingLocation];
     
+    self.showMyLocationButton.backgroundColor = [UIColor clearColor];
+
     
-    self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.showMyLocationButton.tintColor = [UIColor greenColor];
-    //UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+//    self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    self.showMyLocationButton.tintColor = [UIColor greenColor];
+
     //[self.showMyLocationButton setTintColor:[UIColor whiteColor]];
     
     //[self.showMyLocationButton setTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
@@ -50,14 +54,14 @@
     //[[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0].CGColor];
     //    [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
 
-    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
-    [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
+//    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
+//    [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
 
 }
 
--(UITabBarItem *)tabBarItem {
-    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
-}
+//-(UITabBarItem *)tabBarItem {
+//    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
+//}
 
 - (void)locationManager:(CLLocationManager * _Nonnull)manager
      didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
@@ -79,6 +83,7 @@
 //}
 
 - (IBAction)showMyLocationButton:(id)sender {
+    
     
     MKPointAnnotation *mapPin = [[MKPointAnnotation alloc]init];
     mapPin.title = @"The Location";
