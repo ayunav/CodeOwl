@@ -24,6 +24,8 @@
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
 }
+- (IBAction)sendTextTapped:(id)sender {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
