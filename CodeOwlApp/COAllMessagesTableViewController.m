@@ -24,7 +24,7 @@
     
     self.messagingUsers = [NSMutableArray array];
 
-    COUser *user = [[COUser alloc] init];
+    COUser *user = (COUser *)[PFUser currentUser];
     
     [self.messagingUsers addObject:user.name];
   

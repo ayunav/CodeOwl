@@ -90,13 +90,13 @@
 
 - (void)navigateToChatWithUser {
   
-//    COAllMessagesTableViewController *allMessagesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AllChatVC"];
-//    COChatViewController *chatVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatViewController"];
-//
-//    UINavigationController *navigation = [self.tabBarController.viewControllers lastObject];
-//
-//    [navigation setViewControllers:@[allMessagesVC, chatVC]];
-//    [self.tabBarController setSelectedIndex:2];
+    COAllMessagesTableViewController *allMessagesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AllMessagesTVC"];
+    COChatViewController *chatVC = [self.storyboard instantiateViewControllerWithIdentifier:@"chatViewController"];
+
+    UINavigationController *navigation = [self.tabBarController.viewControllers lastObject];
+
+    [navigation setViewControllers:@[allMessagesVC, chatVC]];
+    [self.tabBarController setSelectedIndex:2];
     
     
     
