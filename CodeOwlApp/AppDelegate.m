@@ -36,7 +36,7 @@
     //version 1
     //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:122.00/255.0 green:193.00/255.0 blue:67.00/255.0 alpha:1.0]];
 
-    // version 2
+    // version 2. I like this.
     //  73 G: 169 B: 66
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
 

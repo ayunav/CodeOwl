@@ -146,7 +146,7 @@
                             <constraint firstAttribute="trailing" secondItem="9A0-bB-PkU" secondAttribute="trailing" constant="15" id="wkA-al-sPt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="maps32" selectedImage="maps32" id="Ev7-mP-bU4"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="locationCircle32" selectedImage="maps32" id="Ev7-mP-bU4"/>
                     <connections>
                         <outlet property="mapView" destination="2eh-4K-bUq" id="wxZ-X8-TRK"/>
                         <outlet property="showMyLocationButton" destination="9A0-bB-PkU" id="0fY-OB-shL"/>
@@ -264,7 +264,7 @@
         <scene sceneID="iTY-rG-PKG">
             <objects>
                 <navigationController id="mBA-dO-tgE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="message32" id="caB-bh-O67"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messageCircle32" id="caB-bh-O67"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uO9-ka-Ash">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -497,6 +497,7 @@
                         <outlet property="genderLabel" destination="e01-hl-6gg" id="gMZ-L7-Z6i"/>
                         <outlet property="levelLabel" destination="n7L-fa-X53" id="9jn-Pd-8Wa"/>
                         <outlet property="nameLabel" destination="338-FS-PUO" id="VnY-GG-jPd"/>
+                        <outlet property="settingsButton" destination="t2J-7s-3oh" id="rsR-QX-Dvb"/>
                         <outlet property="skillLabel" destination="Ser-tI-KvQ" id="3rn-bx-Jle"/>
                         <outlet property="spokenLanguageLabel" destination="i7H-yu-woI" id="kzS-1Q-evr"/>
                     </connections>
@@ -722,8 +723,9 @@
     </scenes>
     <resources>
         <image name="Settings-25" width="25" height="25"/>
+        <image name="locationCircle32" width="32" height="32"/>
         <image name="maps32" width="32" height="32"/>
-        <image name="message32" width="32" height="32"/>
+        <image name="messageCircle32" width="32" height="32"/>
         <image name="near_me32" width="32" height="32"/>
         <image name="profile32" width="32" height="32"/>
     </resources>
