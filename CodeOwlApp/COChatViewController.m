@@ -25,6 +25,9 @@
     
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    
 }
 
 - (IBAction)sendMessageButtonTapped:(id)sender {

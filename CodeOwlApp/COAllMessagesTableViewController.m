@@ -27,6 +27,9 @@
     COUser *user = (COUser *)[PFUser currentUser];
     
     [self.messagingUsers addObject:user.name];
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    
   
 }
 
