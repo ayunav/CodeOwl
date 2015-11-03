@@ -74,8 +74,8 @@
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@""
+                                                                   message:@""
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Send Message"
@@ -83,8 +83,13 @@
                                                           handler:^(UIAlertAction * action) {
                                                               [self navigateToChatWithUser];
                                                           }];
+    UIAlertAction* dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                          }];
     
     [alert addAction:defaultAction];
+    [alert addAction:dismiss];
     [self presentViewController:alert animated:YES completion:nil];
 }
 

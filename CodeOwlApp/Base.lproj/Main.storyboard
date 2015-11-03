@@ -70,6 +70,10 @@
                                     <action selector="loginButtonTapped" destination="i3b-E6-yOu" eventType="touchUpInside" id="XgP-Yb-eEk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="468" translatesAutoresizingMaskIntoConstraints="NO" id="zKO-zc-GfS" customClass="codi">
+                                <rect key="frame" x="284" y="284" width="32" height="32"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,10 +87,12 @@
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="hju-Dp-X6k"/>
                             <constraint firstItem="y3C-7b-yet" firstAttribute="top" secondItem="LfA-Hq-wNw" secondAttribute="bottom" constant="-170" id="hus-8d-a6E"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mLs-AE-Iwr"/>
+                            <constraint firstItem="zKO-zc-GfS" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mPc-qt-e9M"/>
                             <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mqR-XL-z97"/>
                             <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="n4D-rW-sAD"/>
                             <constraint firstItem="LfA-Hq-wNw" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="o4y-jS-0eF"/>
                             <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="LfA-Hq-wNw" secondAttribute="bottom" constant="25" id="pRl-va-2eA"/>
+                            <constraint firstItem="zKO-zc-GfS" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="qGa-7B-0fP"/>
                             <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="y3C-7b-yet" secondAttribute="bottom" constant="169" id="uXp-yq-8qp"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="v0B-Dy-fxi"/>
                         </constraints>
@@ -106,7 +112,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="dkE-5N-Dz2"/>
                     <connections>
+                        <outlet property="fbLoginImageButton" destination="LfA-Hq-wNw" id="xyb-AN-Ylf"/>
                         <outlet property="loginButton" destination="y3C-7b-yet" id="2gm-hD-LJI"/>
+                        <outlet property="logoView" destination="IHa-sp-PJN" id="DQX-N7-tNf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvD-tA-hT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -639,7 +647,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kKs-FM-hFz">
                                 <rect key="frame" x="0.0" y="299" width="600" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coding32" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-aL-0PZ" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coding32" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-aL-0PZ">
                                         <rect key="frame" x="14" y="14" width="32" height="32"/>
                                         <animations/>
                                     </imageView>
@@ -695,8 +703,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="GUp-aC-eYP"/>
                                         <exclude reference="1JE-cJ-2Ql"/>
+                                        <exclude reference="GUp-aC-eYP"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1060,6 +1068,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="468" width="512" height="119"/>
         <image name="CodeOwl" width="512" height="119"/>
         <image name="Coding32" width="32" height="32"/>
         <image name="Settings-25" width="25" height="25"/>

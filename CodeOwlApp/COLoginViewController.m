@@ -16,6 +16,9 @@
 @interface COLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIButton *fbLoginImageButton;
 
 @end
 
@@ -25,6 +28,7 @@
     [super viewDidLoad];
     
     self.loginButton.hidden = YES;
+    self.activityIndicator.hidden = YES;
     
 //     if (![PFUser currentUser]) {
 //        [self showLogin];
@@ -44,6 +48,10 @@
 }
 
 - (void)showLogin {
+    
+    self.activityIndicator.hidden = NO;
+    self.logoView.hidden = YES;
+    self.fbLoginImageButton.hidden = YES;
     
     [PFFacebookUtils logInInBackgroundWithReadPermissions: @[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error) {
         if (!user) {

@@ -53,7 +53,7 @@
 
 -(void)setupNavigationBar {
     
-    self.navigationItem.title = @"Settings";
+    //self.navigationItem.title = @"Settings";
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor darkGrayColor];
@@ -75,9 +75,10 @@
     
     //[user setValue:result[@"name"] forKey:@"name"];
     
-   
+    self.skillTextField.text = user.skill;
+    
+    //    user.skill = self.skillTextField.text;
     user.name = self.nameTextField.text;
-    user.skill = self.skillTextField.text;
     user.level = self.levelTextField.text;
     user.bio = self.bioTextField.text;
     user.gender = self.genderTextField.text;
