@@ -54,14 +54,14 @@
     }
     
     
-    COUser *user = (COUser *)[PFUser currentUser];
+    //COUser *user = (COUser *)[PFUser currentUser];
     //  PFQuery *query = [PFQuery queryWithClassName;
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        self.skillLabel.text = [user skill];
-        self.levelLabel.text = [user level];
-        [self.view reloadInputViews];
-    }];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//        self.skillLabel.text = [user skill];
+//        self.levelLabel.text = [user level];
+//        [self.view reloadInputViews];
+//    }];
     
     
     
