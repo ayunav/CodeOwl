@@ -73,11 +73,11 @@
     
     COUser *user = (COUser *)[PFUser currentUser];
     
-    //[user setValue:result[@"name"] forKey:@"name"];
+//    [user setValue:result[@"name"] forKey:@"name"];
     
     self.skillTextField.text = user.skill;
     
-    //    user.skill = self.skillTextField.text;
+//    user.skill = self.skillTextField.text;
     user.name = self.nameTextField.text;
     user.level = self.levelTextField.text;
     user.bio = self.bioTextField.text;

@@ -9,9 +9,10 @@
 #import "COOtherUserProfileViewController.h"
 
 @interface COOtherUserProfileViewController ()
-@property (weak, nonatomic) IBOutlet UIView *avatarView;
 
+@property (weak, nonatomic) IBOutlet UIView *avatarView;
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
+
 @end
 
 @implementation COOtherUserProfileViewController
@@ -26,13 +27,10 @@
 
     self.sendMessageButton.backgroundColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
     self.sendMessageButton.titleLabel.textColor = [UIColor blackColor];
-
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

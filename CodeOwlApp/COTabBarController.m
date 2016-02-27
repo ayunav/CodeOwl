@@ -16,15 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    
-//    [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:n] setImage:[UIImage imageNamed:@"(unselected image file)"]];
-//    [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:n] setSelectedImage:[UIImage imageNamed:@"(selected image file)"]];
 }
 
 

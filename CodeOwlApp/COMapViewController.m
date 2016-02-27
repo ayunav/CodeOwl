@@ -6,13 +6,12 @@
 //  Copyright © 2015 Ayuna Vogel. All rights reserved.
 //
 
-#import "COMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-//#import <ChameleonFramework/Chameleon.h>
 #import <Parse/Parse.h>
 
 #import "COUser.h"
+#import "COMapViewController.h"
 #import "COAllMessagesTableViewController.h"
 #import "COChatViewController.h"
 
@@ -20,14 +19,11 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationManager *locationManager;
-
 @property (nonatomic) BOOL firstTime;
-
 @property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
+@property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
 
 - (IBAction)showMyLocationButton:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
 
 @end
 
@@ -103,16 +99,13 @@
 
     [navigation setViewControllers:@[allMessagesVC, chatVC]];
     [self.tabBarController setSelectedIndex:2];
-    
-    
-    
 }
 
 - (void)fetchAllUsers {
     
     PFQuery *query = [PFQuery queryWithClassName:[COUser parseClassName]];
     
-    // Source: https://parse.com/questions/fetch-all-data-in-a-table-using-pfquery
+    // https://parse.com/questions/fetch-all-data-in-a-table-using-pfquery
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         if (!error) {
@@ -152,7 +145,7 @@
     
     MKPointAnnotation *mapPin = [[MKPointAnnotation alloc]init];
     mapPin.title = @"The Location";
-    //    mapPin.subtitle = @"Sub-title";
+//    mapPin.subtitle = @"Sub-title";
     mapPin.coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     [self.mapView addAnnotation:mapPin];
     

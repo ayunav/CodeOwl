@@ -10,6 +10,7 @@
 #import "COUser.h"
 
 @interface COChatViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
 
 @property (strong, nonatomic) NSMutableArray *messagesArray;
@@ -17,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 
 @end
+
+
 
 @implementation COChatViewController
 
@@ -27,7 +30,6 @@
     self.messageTableView.delegate = self;
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
-    
 }
 
 - (IBAction)sendMessageButtonTapped:(id)sender {
@@ -35,20 +37,18 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.messagesArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageIdentifier" forIndexPath:indexPath];
     
 //    COUser *userMessage = self.messagesArray[indexPath.row];

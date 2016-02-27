@@ -27,8 +27,7 @@
     return CLLocationCoordinate2DMake(self.location.latitude, self.location.longitude);
 }
 
-- (NSString *)title
-{
+- (NSString *)title {
     return self.name;
 }
 

@@ -141,24 +141,13 @@
 				290E038F1BE4FECB00E544B7 /* Main.storyboard */,
 				290E03891BE4FECB00E544B7 /* AppDelegate.h */,
 				290E038A1BE4FECB00E544B7 /* AppDelegate.m */,
-				290E03CE1BE5166B00E544B7 /* COUser.h */,
-				290E03CF1BE5166B00E544B7 /* COUser.m */,
+				29F8A1341C8238D80004C16C /* Model */,
 				292281FE1BE5AD8800658C97 /* COTabBarController.h */,
 				292281FF1BE5AD8800658C97 /* COTabBarController.m */,
-				290E03B91BE506DA00E544B7 /* COLoginViewController.h */,
-				290E03BA1BE506DA00E544B7 /* COLoginViewController.m */,
-				290E03BC1BE506FD00E544B7 /* COMyProfileViewController.h */,
-				290E03BD1BE506FD00E544B7 /* COMyProfileViewController.m */,
-				290E03BF1BE5070F00E544B7 /* COProfileSettingsViewController.h */,
-				290E03C01BE5070F00E544B7 /* COProfileSettingsViewController.m */,
-				290E03C21BE5076A00E544B7 /* COMapViewController.h */,
-				290E03C31BE5076A00E544B7 /* COMapViewController.m */,
-				290E03C51BE5078F00E544B7 /* COOtherUserProfileViewController.h */,
-				290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */,
-				290E03C81BE507D000E544B7 /* COAllMessagesTableViewController.h */,
-				290E03C91BE507D000E544B7 /* COAllMessagesTableViewController.m */,
-				290E03CB1BE507F200E544B7 /* COChatViewController.h */,
-				290E03CC1BE507F200E544B7 /* COChatViewController.m */,
+				29F8A1381C8239390004C16C /* Login View Controller */,
+				29F8A1351C8238FE0004C16C /* Profile & Settings View Controllers */,
+				29F8A1371C8239210004C16C /* Maps View Controller */,
+				29F8A1361C8239160004C16C /* Messenger View Controllers */,
 				290E03921BE4FECB00E544B7 /* Assets.xcassets */,
 				290E03941BE4FECB00E544B7 /* LaunchScreen.storyboard */,
 				290E03971BE4FECB00E544B7 /* Info.plist */,
@@ -191,6 +180,57 @@
 				290E03AD1BE4FECC00E544B7 /* Info.plist */,
 			);
 			path = CodeOwlAppUITests;
+			sourceTree = "<group>";
+		};
+		29F8A1341C8238D80004C16C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				290E03CE1BE5166B00E544B7 /* COUser.h */,
+				290E03CF1BE5166B00E544B7 /* COUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		29F8A1351C8238FE0004C16C /* Profile & Settings View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				290E03BC1BE506FD00E544B7 /* COMyProfileViewController.h */,
+				290E03BD1BE506FD00E544B7 /* COMyProfileViewController.m */,
+				290E03C51BE5078F00E544B7 /* COOtherUserProfileViewController.h */,
+				290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */,
+				290E03BF1BE5070F00E544B7 /* COProfileSettingsViewController.h */,
+				290E03C01BE5070F00E544B7 /* COProfileSettingsViewController.m */,
+			);
+			name = "Profile & Settings View Controllers";
+			sourceTree = "<group>";
+		};
+		29F8A1361C8239160004C16C /* Messenger View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				290E03C81BE507D000E544B7 /* COAllMessagesTableViewController.h */,
+				290E03C91BE507D000E544B7 /* COAllMessagesTableViewController.m */,
+				290E03CB1BE507F200E544B7 /* COChatViewController.h */,
+				290E03CC1BE507F200E544B7 /* COChatViewController.m */,
+			);
+			name = "Messenger View Controllers";
+			sourceTree = "<group>";
+		};
+		29F8A1371C8239210004C16C /* Maps View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				290E03C21BE5076A00E544B7 /* COMapViewController.h */,
+				290E03C31BE5076A00E544B7 /* COMapViewController.m */,
+			);
+			name = "Maps View Controller";
+			sourceTree = "<group>";
+		};
+		29F8A1381C8239390004C16C /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				290E03B91BE506DA00E544B7 /* COLoginViewController.h */,
+				290E03BA1BE506DA00E544B7 /* COLoginViewController.m */,
+			);
+			name = "Login View Controller";
 			sourceTree = "<group>";
 		};
 		964A680C775CA2770AE579B6 /* Pods */ = {

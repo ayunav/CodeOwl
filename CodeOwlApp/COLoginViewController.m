@@ -81,8 +81,6 @@
                 
                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
 //                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"COProfileSettingsViewController"]];
-                    
-                    
                 }];
                 
             }];

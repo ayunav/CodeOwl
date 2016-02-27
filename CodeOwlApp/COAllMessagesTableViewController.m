@@ -17,40 +17,37 @@
 
 @end
 
+
+
 @implementation COAllMessagesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.messagingUsers = [NSMutableArray array];
-
     COUser *user = (COUser *)[PFUser currentUser];
     
+    self.messagingUsers = [NSMutableArray array];
     [self.messagingUsers addObject:user.name];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
-    
-  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-   
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.messagingUsers.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messagingUserCell" forIndexPath:indexPath];
     
     cell.textLabel.text = @"Messages";
@@ -66,9 +63,8 @@
     COChatViewController *detailVC = segue.destinationViewController;
     
     detailVC.user = userObject;
-    
-    
 }
+
 /*
 #pragma mark - Navigation
 

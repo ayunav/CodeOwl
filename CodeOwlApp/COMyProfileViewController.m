@@ -43,7 +43,8 @@
     self.settingsButton.tintColor = [UIColor whiteColor];
     
     
-    // got code from stack overflow: http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7
+    // http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7
+   
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{ @"fields" : @"id,name,picture.width(100).height(100)"}]startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if (!error) {
@@ -54,9 +55,9 @@
     }
     
     
-    //COUser *user = (COUser *)[PFUser currentUser];
-    //  PFQuery *query = [PFQuery queryWithClassName;
-    
+//    COUser *user = (COUser *)[PFUser currentUser];
+//    PFQuery *query = [PFQuery queryWithClassName;
+//                      
 //    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
 //        self.skillLabel.text = [user skill];
 //        self.levelLabel.text = [user level];
@@ -64,13 +65,7 @@
 //    }];
     
     
-    
-    
     //    self.nameLabel.text = [user username];
-    
-    
-    
-    
 }
 
 
