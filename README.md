@@ -16,18 +16,18 @@ Projects were evaluated by an elite panel of judges including Benjamin Jackson, 
 
 CodeOwl team will present the app at the QTM (Queens Tech MeetUp) in December 2015.
 
-
+![video](https://github.com/ayunav/CodeOwlApp/blob/working-version/CodeOwlApp.gif)
 
 [CodeOwl Presentation Deck](http://slides.com/avog/codeowl/)
 
 
-**Team responisibilities:**  
+**Team responsibilities:**  
 
 Ayuna: 
 * Designed data model and architecture, 
 * Facilitated product manager role and led concept development, 
 * Integrated Parse for back-end database communication,  
-* Utilized CocoaPods, and integrated Facebook SDK and API, 
+* Utilized CocoaPods and integrated Facebook SDK and API, 
 * Added Facebook Login Button for an easier onboarding process, 
 * Developed UX/UI for the Personal Profile and Profile Settings View Controllers.  
 
