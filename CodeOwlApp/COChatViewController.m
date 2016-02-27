@@ -53,7 +53,7 @@
     
 //    COUser *userMessage = self.messagesArray[indexPath.row];
     //[COUser] set up property "messages"
-    cell.textLabel.text = @"Fuck This";
+    cell.textLabel.text = @"Hello World";
 //    cell.textLabel.text = userMessage.messages;
 
     return cell;

@@ -11,8 +11,10 @@
 #import <ChameleonFramework/Chameleon.h>
 
 #import "COUser.h"
-
 #import "AppDelegate.h"
+
+#define parseAppId @"YOUR-PARSE-APP-ID"
+#define parseClientKey @"YOUR-PARSE-CLIENT-KEY"
 
 @interface AppDelegate ()
 
@@ -28,8 +30,8 @@
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
-    [Parse setApplicationId:@"vVCbBO1t6tRe2w1AkohILzXYvRZ0HvtXBq3k9awo"
-                  clientKey:@"K2rM55TC2TNjiAmJNWTyQjCsviIhl2Cj4BLbWlD4"];
+    [Parse setApplicationId: parseAppId
+                  clientKey: parseClientKey];
     
     
     [COUser registerSubclass];

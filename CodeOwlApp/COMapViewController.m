@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 //#import <ChameleonFramework/Chameleon.h>
 #import <Parse/Parse.h>
+
 #import "COUser.h"
 #import "COAllMessagesTableViewController.h"
 #import "COChatViewController.h"

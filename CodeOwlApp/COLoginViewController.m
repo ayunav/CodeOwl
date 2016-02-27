@@ -6,12 +6,12 @@
 //  Copyright © 2015 Ayuna Vogel. All rights reserved.
 //
 #import <Parse/Parse.h>
-
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h> 
 
 #import "COLoginViewController.h"
 #import "COUser.h"
 #import "COMyProfileViewController.h"
+#import "AppDelegate.h"
 
 @interface COLoginViewController ()
 
@@ -65,6 +65,9 @@
             
             [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                 
+                UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+                [self presentViewController:tabBarController animated:NO completion:nil];
+                
                 COUser *user = (COUser *)[PFUser currentUser];
                 
                 [user setValue:result[@"name"] forKey:@"name"];
@@ -75,10 +78,10 @@
                 
                 self.loginButton.hidden = YES;
                 
+                
                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
 //                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"COProfileSettingsViewController"]];
-                    UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-                    [self presentViewController:tabBarController animated:YES completion:nil];
+                    
                     
                 }];
                 
