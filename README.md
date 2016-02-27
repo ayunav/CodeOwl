@@ -32,7 +32,7 @@ Ayuna:
 * Developed UX/UI for the Personal Profile and Profile Settings View Controllers.  
 
 Natalia: 
-* 
+* Developed the messenger part of the app. 
 
 Felicia: 
-* 
+* Developed the maps and core location parts of the app. 
