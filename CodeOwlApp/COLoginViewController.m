@@ -8,15 +8,15 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h> 
 
-#import "COLoginViewController.h"
 #import "COUser.h"
-#import "COMyProfileViewController.h"
 #import "AppDelegate.h"
+#import "COLoginViewController.h"
+#import "COMyProfileViewController.h"
+#import "COMapViewController.h"
 
 @interface COLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIView *logoView;
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginImageButton;
 
@@ -28,7 +28,6 @@
     [super viewDidLoad];
     
     self.loginButton.hidden = YES;
-    self.activityIndicator.hidden = YES;
     
 //     if (![PFUser currentUser]) {
 //        [self showLogin];
@@ -49,7 +48,6 @@
 
 - (void)showLogin {
     
-    self.activityIndicator.hidden = NO;
     self.logoView.hidden = YES;
     self.fbLoginImageButton.hidden = YES;
     
@@ -60,6 +58,10 @@
             NSLog(@"User signed up and logged in through Facebook!");
         } else {
             NSLog(@"User logged in through Facebook!");
+            
+
+            [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+            
             
             FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email, gender, link"}];
             

@@ -42,8 +42,6 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    //[Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatGreenColor] withContentStyle:UIContentStyleLight];
-    
     // green color. RGB values:
     //  73 G: 169 B: 66
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
