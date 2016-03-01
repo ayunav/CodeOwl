@@ -13,8 +13,8 @@
 #import "COUser.h"
 #import "AppDelegate.h"
 
-#define parseAppId @"YOUR-PARSE-APP-ID"
-#define parseClientKey @"YOUR-PARSE-CLIENT-KEY"
+#define parseAppId @"vVCbBO1t6tRe2w1AkohILzXYvRZ0HvtXBq3k9awo" //YOUR-PARSE-APP-ID
+#define parseClientKey @"K2rM55TC2TNjiAmJNWTyQjCsviIhl2Cj4BLbWlD4" //YOUR-PARSE-CLIENT-KEY
 
 @interface AppDelegate ()
 
