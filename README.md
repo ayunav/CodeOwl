@@ -18,6 +18,8 @@ CodeOwl team will present the app at the QTM (Queens Tech MeetUp) in December 20
 
 ![video](https://github.com/ayunav/CodeOwlApp/blob/working-version/CodeOwlApp.gif)
 
+Read Ayuna's blog post ["How to learn UI: Beginner's guide to iOS mobile app design"](https://medium.com/@AyunasCode/how-to-learn-ui-bc6f05738e4d#.vvsnguhtn) in which she recommneds her favorite resources and uses CodeOwl app as an example. 
+
 [CodeOwl Presentation Deck](http://slides.com/avog/codeowl/)
 
 
@@ -32,7 +34,7 @@ Ayuna:
 * Developed UX/UI for the Personal Profile and Profile Settings View Controllers.  
 
 Natalia: 
-* 
+* Developed the messenger part of the app. 
 
 Felicia: 
-* 
+* Developed the maps and core location parts of the app. 
