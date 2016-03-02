@@ -8,10 +8,11 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <ChameleonFramework/Chameleon.h>
 
 #import "COUser.h"
 #import "AppDelegate.h"
+#import "COLoginViewController.h"
+#import "COTabBarController.h"
 
 #define parseAppId @"vVCbBO1t6tRe2w1AkohILzXYvRZ0HvtXBq3k9awo" //YOUR-PARSE-APP-ID
 #define parseClientKey @"K2rM55TC2TNjiAmJNWTyQjCsviIhl2Cj4BLbWlD4" //YOUR-PARSE-CLIENT-KEY
@@ -26,9 +27,38 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     /* PARSE SETUP */
+    [self setUpParse];
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions]; // [Optional] Track statistics around application opens.
+
     
+    [self setUpUI];
+    
+//    PFUser *user = [COUser currentUser];
+//    
+//    if (!user) {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        COLoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"COLoginViewController"];
+//        [self.window setRootViewController:loginVC];
+//    } else {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+//        [self.window setRootViewController:tabBarController];
+//    }
+    
+    
+    
+    
+    // ?
+//    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+//    tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
+    
+    return YES;
+}
+
+- (void)setUpParse {
     // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS 
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
@@ -36,24 +66,13 @@
                   clientKey: parseClientKey];
     
     [COUser registerSubclass];
-    
-    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
-    
-    // [Optional] Track statistics around application opens.
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    
-    /* UI APPEARANCE SETUP */
+}
 
+- (void)setUpUI {
     // green color. RGB values: 73 G: 169 B: 66
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
-
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
-
-//    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
-//    tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
     
-    return YES;
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {

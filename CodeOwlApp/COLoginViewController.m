@@ -50,8 +50,21 @@
              NSLog(@"Logged in");
 
              // this segue attempts to work but the view is in the wrong window hierarchy
-             //             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+             // ERROR MESSAGE: Attempt to present <COTabBarController: 0x7fa6ac857830> on <FBSDKContainerViewController: 0x7fa6aa455d30> whose view is not in the window hierarchy!
 
+             //             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+            
+             
+             
+             
+             // attempts , doesn't work
+//             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+//             [appDelegate.window setRootViewController:tabBarController];
+//             [appDelegate.window makeKeyAndVisible];
+             
+             
 
              // this doesn't work, trying to setup tabbarcontroller to rootViewController
 //             COTabBarController *tabBarController = [[COTabBarController alloc]init];
@@ -78,6 +91,11 @@
          }
      }];
 }
+
+//- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+//    NSLog(@"User logged out");
+//}
+
 
 //- (void)loginButton:(FBSDKLoginButton *)loginButton
 //didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
@@ -124,9 +142,6 @@
 //    
 //}
 
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-    NSLog(@"User logged out");
-}
 
 //- (IBAction)loginWithFacebookButtonTapped:(id)sender {
 //   
