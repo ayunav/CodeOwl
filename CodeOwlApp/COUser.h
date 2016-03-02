@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *spokenLanguage;
 @property (nonatomic, strong) PFFile *avatar;
 @property (nonatomic) BOOL showMyProfileToMyGenderOnly;
+
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (nonatomic, strong) PFGeoPoint *location;
 

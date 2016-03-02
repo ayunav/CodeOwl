@@ -18,6 +18,7 @@
 @dynamic spokenLanguage;
 @dynamic avatar;
 @dynamic showMyProfileToMyGenderOnly;
+
 @dynamic messages;
 @dynamic location;
 

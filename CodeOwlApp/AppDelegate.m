@@ -25,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    /* PARSE SETUP */
+    
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS 
     [Parse enableLocalDatastore];
@@ -33,22 +35,23 @@
     [Parse setApplicationId: parseAppId
                   clientKey: parseClientKey];
     
-    
     [COUser registerSubclass];
     
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
-    
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    
+    /* UI APPEARANCE SETUP */
+
     // green color. RGB values: 73 G: 169 B: 66
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
 
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:83.00/255.0 green:123.00/255.0 blue:53.00/255.0 alpha:1.0]];
 
-    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
-    tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
+//    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+//    tabBarController.view.tintColor = [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0];
     
     return YES;
 }

@@ -13,8 +13,9 @@
 #import "COLoginViewController.h"
 #import "COMyProfileViewController.h"
 #import "COMapViewController.h"
+#import "COTabBarController.h"
 
-@interface COLoginViewController ()
+@interface COLoginViewController () //<FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
@@ -22,64 +23,143 @@
 
 @implementation COLoginViewController
 
-//**** new version login vc ******
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
+    [self.loginButton
+     addTarget:self
+     action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (IBAction)loginWithFacebookButtonTapped:(id)sender {
-    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_friends", @"user_location"];
-    
-    // Login PFUser using Facebook
-    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
 
-            [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+-(void)loginButtonClicked
+{
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             
+             // user logs in correctly
+             NSLog(@"Logged in");
 
-        } else {
-            NSLog(@"User logged in through Facebook!");
-            
-            [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-            
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
-            
-            
-        }
-    }];
+             // this segue attempts to work but the view is in the wrong window hierarchy
+             //             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+
+
+             // this doesn't work, trying to setup tabbarcontroller to rootViewController
+//             COTabBarController *tabBarController = [[COTabBarController alloc]init];
+//             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+//             [appDelegate.window setRootViewController:tabBarController];
+//             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+
+             
+             // app crashes when this segue is used: NSRangeException reason: '*** -[__NSArrayI objectAtIndex:]: index 9223372036854775807 beyond bounds [0 .. 1]'
+//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+//             [tabBarController setSelectedIndex:0];
+//             [self presentViewController:tabBarController animated:YES completion:nil];
+
+             // this results in the same error
+//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+//             UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+//             [top presentViewController:tabBarController animated:YES completion: nil];
+             
+             // swift ?
+//             let mainTabBarController = MainTabBarController()
+//             appDelegate.window!.rootViewController = mainTabBarController
+         }
+     }];
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
+//- (void)loginButton:(FBSDKLoginButton *)loginButton
+//didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+//              error:(NSError *)error
+//{
 //    
-//    self.loginButton.hidden = YES;
+//    if (error) {
+//        NSLog(@"Process error");
+//    } else if (result.isCancelled) {
+//        NSLog(@"Cancelled");
+//    } else {
+////        NSLog(@"Logged in");
+//        self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends", @"user_location"];
+//
+//        [PFFacebookUtils logInInBackgroundWithReadPermissions:self.loginButton.readPermissions
+//                                                        block:^(PFUser *user, NSError *error)
+//        {
+//                    if (!user) {
+//                        NSLog(@"Uh oh. The user cancelled the Facebook login.");
+//                    } else if (user.isNew) {
+//                        NSLog(@"User signed up and logged in through Facebook!");
+//                    } else {
+//                        NSLog(@"User logged in through Facebook!");
+//            
+//            
+//                        [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+//                    }
+//            }];
+//        
+//        
+////        
+////        NSLog(@"User logged in through Facebook!");
+////
+////        
+////        
+////        //[self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+////        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+////        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+////        [self presentViewController:tabBarController animated:YES completion:nil];
+//
+//    }
 //    
-////     if (![PFUser currentUser]) {
-////        [self showLogin];
-////    } else {
-////        [self showApp];
-////    }
+//    
 //    
 //}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    NSLog(@"User logged out");
+}
+
+//- (IBAction)loginWithFacebookButtonTapped:(id)sender {
+//   
+//    // Login PFUser using Facebook
+//    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+//        if (!user) {
+//            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+//        } else if (user.isNew) {
+//            NSLog(@"User signed up and logged in through Facebook!");
 //
-//- (IBAction)loginButtonTapped {
-//    [self showLogin];
+//            // [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+//            [self presentViewController:tabBarController animated:YES completion:nil];
+//            
+//        } else {
+//            NSLog(@"User logged in through Facebook!");
+//            
+//            [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
+//            
+////            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+////            UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+////            [self presentViewController:tabBarController animated:YES completion:nil];
+//            
+//            
+//        }
+//    }];
 //}
-//
-//- (void)showApp {
-//    UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-//    [self presentViewController:tabBarController animated:NO completion:nil];
-//}
-//
+
+// ***** this segue worked before when I had all those weird buttons hiding before the actual segue, but now  I'm trying to fix the app and make a nice clean code project  ******
+
 //- (void)showLogin {
-//    
-//    self.logoView.hidden = YES;
-//    self.fbLoginImageButton.hidden = YES;
-//    
+//
 //    [PFFacebookUtils logInInBackgroundWithReadPermissions: @[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error) {
 //        if (!user) {
 //            NSLog(@"Uh oh. The user cancelled the Facebook login.");
