@@ -19,6 +19,9 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationManager *locationManager;
+
+
+
 @property (nonatomic) BOOL firstTime;
 @property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
 @property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
@@ -26,6 +29,8 @@
 - (IBAction)showMyLocationButton:(id)sender;
 
 @end
+
+
 
 @implementation COMapViewController
 
@@ -36,8 +41,7 @@
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
     
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-    {
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
     [self.locationManager startUpdatingLocation];
