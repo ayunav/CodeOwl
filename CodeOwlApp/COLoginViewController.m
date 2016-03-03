@@ -20,6 +20,8 @@
 
 @interface COLoginViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
 @end
 
 @implementation COLoginViewController
@@ -35,6 +37,9 @@
     // Presenting view controllers on detached view controllers is discouraged <COLoginViewController: 0x7f82c14bc3b0>.
     // Unbalanced calls to begin/end appearance transitions for <UINavigationController: 0x7f82c187d600>.
     if ([FBSDKAccessToken currentAccessToken]) {
+        
+        self.loginButton.hidden = YES;
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
         [self presentViewController:tabBarController animated:NO completion:nil];
@@ -51,6 +56,7 @@
             NSLog(@"User signed up and logged in through Facebook!");
         } else {
             NSLog(@"User logged in through Facebook!");
+            self.loginButton.hidden = YES; 
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];

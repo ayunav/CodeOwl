@@ -66,6 +66,16 @@
     
     
     //    self.nameLabel.text = [user username];
+    
+//    user.skill = self.skillTextField.text;
+//    user.name = self.nameTextField.text;
+//    user.level = self.levelTextField.text;
+//    user.bio = self.bioTextField.text;
+//    user.gender = self.genderTextField.text;
+//    user.spokenLanguage = self.spokenLanguageTextField.text;
+//    user.showMyProfileToMyGenderOnly = self.showMyProfileToMyGenderOnly.on;
+    
+    
 }
 
 

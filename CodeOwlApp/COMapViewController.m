@@ -37,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    
+    
     //create location manager
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
