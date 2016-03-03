@@ -29,9 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view reloadInputViews]; 
-    //self.navigationItem.title = @"My Profile";
-    
+    [self setupUI];
+    [self fetchUserData];
+}
+
+- (void)setupUI {
     // avatar view setup
     self.avatarView.layer.cornerRadius = 80.0;
     self.avatarView.clipsToBounds = YES;
@@ -41,42 +43,36 @@
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
     self.settingsButton.tintColor = [UIColor whiteColor];
+    //self.navigationItem.title = @"My Profile";
     
     
     // http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7
-   
+    
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{ @"fields" : @"id,name,picture.width(100).height(100)"}]startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if (!error) {
                 self.nameLabel.text = [result valueForKey:@"name"];
-                self.genderLabel.text = [result valueForKey:@"gender"];
+                if ([result valueForKey:@"gender"] != nil) {
+                    self.genderLabel.text = [result valueForKey:@"gender"];
+                }
             }
         }];
     }
-    
-    
-//    COUser *user = (COUser *)[PFUser currentUser];
-//    PFQuery *query = [PFQuery queryWithClassName;
-//                      
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        self.skillLabel.text = [user skill];
-//        self.levelLabel.text = [user level];
-//        [self.view reloadInputViews];
-//    }];
-    
-    
-    //    self.nameLabel.text = [user username];
-    
-//    user.skill = self.skillTextField.text;
-//    user.name = self.nameTextField.text;
-//    user.level = self.levelTextField.text;
-//    user.bio = self.bioTextField.text;
-//    user.gender = self.genderTextField.text;
-//    user.spokenLanguage = self.spokenLanguageTextField.text;
-//    user.showMyProfileToMyGenderOnly = self.showMyProfileToMyGenderOnly.on;
-    
-    
 }
 
+- (void)fetchUserData {
+    COUser *user = (COUser *)[PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+                      
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        self.nameLabel.text = [user name];
+        self.skillLabel.text = [user skill];
+        self.levelLabel.text = [user level];
+        self.genderLabel.text = [user gender]; // think about how to display gender if the value was changed via settings vs fetched from fb graph in setupUI method above
+        self.spokenLanguageLabel.text = [user spokenLanguage];
+        self.bioLabel.text = [user bio];
+        [self.view reloadInputViews]; // ?
+    }];
+}
 
 @end

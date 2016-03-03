@@ -12,27 +12,25 @@
 @interface COChatViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 
 @property (strong, nonatomic) NSMutableArray *messagesArray;
 
-@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
-
 @end
-
 
 
 @implementation COChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
     
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
-    
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
 }
 
 - (IBAction)sendMessageButtonTapped:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,9 +58,8 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    //dimiss the keyboard and lose focus
+    //dimiss the keyboard
     [self.view endEditing:YES];
-    
     return YES;
 }
 

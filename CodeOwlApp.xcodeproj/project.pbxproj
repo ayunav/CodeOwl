@@ -196,10 +196,10 @@
 			children = (
 				290E03BC1BE506FD00E544B7 /* COMyProfileViewController.h */,
 				290E03BD1BE506FD00E544B7 /* COMyProfileViewController.m */,
-				290E03C51BE5078F00E544B7 /* COOtherUserProfileViewController.h */,
-				290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */,
 				290E03BF1BE5070F00E544B7 /* COProfileSettingsViewController.h */,
 				290E03C01BE5070F00E544B7 /* COProfileSettingsViewController.m */,
+				290E03C51BE5078F00E544B7 /* COOtherUserProfileViewController.h */,
+				290E03C61BE5078F00E544B7 /* COOtherUserProfileViewController.m */,
 			);
 			name = "Profile & Settings View Controllers";
 			sourceTree = "<group>";

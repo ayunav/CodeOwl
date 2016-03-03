@@ -18,28 +18,24 @@
 @interface COMapViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic) CLLocationManager *locationManager;
-
-
-
-@property (nonatomic) BOOL firstTime;
 @property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
-@property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
+
+@property (nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)showMyLocationButton:(id)sender;
 
-@end
 
+@property (weak, nonatomic) IBOutlet UIButton *feliciaButtonP;
+@property (nonatomic) BOOL firstTime;
+
+@end
 
 
 @implementation COMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
-    
-    
+ 
     //create location manager
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -49,30 +45,29 @@
     }
     [self.locationManager startUpdatingLocation];
     
-    
-    self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.showMyLocationButton.tintColor = [UIColor greenColor];
-    
-    
-    self.feliciaButtonP.layer.cornerRadius = 30;
-    self.feliciaButtonP.clipsToBounds = YES;
-    self.feliciaButtonP.layer.borderWidth = 1;
-    self.feliciaButtonP.layer.borderColor = [UIColor greenColor].CGColor;
-    //UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //[self.showMyLocationButton setTintColor:[UIColor whiteColor]];
-    
-    //[self.showMyLocationButton setTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
-    
-    //[[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0].CGColor];
-    //    [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
-
-    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
-    [self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
-
     self.mapView.delegate = self;
     
     [self fetchAllUsers];
 
+    
+    self.feliciaButtonP.layer.cornerRadius = 30;
+    self.feliciaButtonP.clipsToBounds = YES;
+//    self.feliciaButtonP.layer.borderWidth = 1;
+//    self.feliciaButtonP.layer.borderColor = [UIColor greenColor].CGColor;
+}
+
+- (void)setupUI {
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CodeOwlLogoWhiteSmall"]];
+    
+    [self.tabBarItem setImage:[UIImage imageNamed:@"locationCircle32"]];
+    //[self.tabBarItem setSelectedImage:[UIImage imageNamed:@"locationCircle32"]];
+
+    self.showMyLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.showMyLocationButton.tintColor = [UIColor greenColor];
+    //[self.showMyLocationButton setTintColor:[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+    //[[UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0].CGColor];
+    //    [UIColor colorWithRed:73.00/255.0 green:169.00/255.0 blue:66.00/255.0 alpha:1.0]];
+    //[self.showMyLocationButton setTintColor:[UIColor whiteColor]];
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {

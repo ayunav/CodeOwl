@@ -66,6 +66,7 @@
     
     COUser *user = (COUser *)[PFUser currentUser];
     
+    // if the text field is empty, saves empty string to database
     user.skill = self.skillTextField.text;
     user.name = self.nameTextField.text;
     user.level = self.levelTextField.text;
