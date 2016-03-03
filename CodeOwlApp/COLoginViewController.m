@@ -15,7 +15,10 @@
 #import "COMapViewController.h"
 #import "COTabBarController.h"
 
-@interface COLoginViewController () //<FBSDKLoginButtonDelegate>
+// https://github.com/ParsePlatform/ParseUI-iOS/wiki/Integrate-Login-with-Facebook
+// https://developers.facebook.com/docs/facebook-login/ios
+
+@interface COLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
@@ -23,8 +26,7 @@
 
 @implementation COLoginViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.loginButton addTarget:self
@@ -32,83 +34,46 @@
                forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    // Presenting view controllers on detached view controllers is discouraged <COLoginViewController: 0x7f82c14bc3b0>.
+    // Unbalanced calls to begin/end appearance transitions for <UINavigationController: 0x7f82c187d600>.
+    if ([FBSDKAccessToken currentAccessToken]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+        [self presentViewController:tabBarController animated:NO completion:nil];
+    }
+}
 
--(void)loginButtonClicked
-{
+-(void)loginButtonClicked {
+    
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login
-     logInWithReadPermissions: @[@"public_profile"]
-     fromViewController:self
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    
+    [login logInWithReadPermissions: @[@"public_profile", @"email", @"user_friends"]
+                 fromViewController:self
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              NSLog(@"Process error");
          } else if (result.isCancelled) {
              NSLog(@"Cancelled");
          } else {
-             
-             NSLog(@"Logged in");
-
-//             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-
+             NSLog(@"User Logged in with Facebook");
+             // the login VC shows up for a second before the segue happens
              UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
              COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
              [self presentViewController:tabBarController animated:NO completion:nil];
 
+             // alternative segue
+//             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
           }
      }];
 }
 
-//- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-//    NSLog(@"User logged out");
-//}
 
 
-//- (void)loginButton:(FBSDKLoginButton *)loginButton
-//didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
-//              error:(NSError *)error
-//{
-//    
-//    if (error) {
-//        NSLog(@"Process error");
-//    } else if (result.isCancelled) {
-//        NSLog(@"Cancelled");
-//    } else {
-////        NSLog(@"Logged in");
-//        self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends", @"user_location"];
-//
-//        [PFFacebookUtils logInInBackgroundWithReadPermissions:self.loginButton.readPermissions
-//                                                        block:^(PFUser *user, NSError *error)
-//        {
-//                    if (!user) {
-//                        NSLog(@"Uh oh. The user cancelled the Facebook login.");
-//                    } else if (user.isNew) {
-//                        NSLog(@"User signed up and logged in through Facebook!");
-//                    } else {
-//                        NSLog(@"User logged in through Facebook!");
-//            
-//            
-//                        [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-//                    }
-//            }];
-//        
-//        
-////        
-////        NSLog(@"User logged in through Facebook!");
-////
-////        
-////        
-////        //[self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-////        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-////        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-////        [self presentViewController:tabBarController animated:YES completion:nil];
-//
-//    }
-//    
-//    
-//    
-//}
 
-
+// login through parse, regular button with a ui image and IBAction
 //- (IBAction)loginWithFacebookButtonTapped:(id)sender {
 //   
 //    // Login PFUser using Facebook
