@@ -122,9 +122,9 @@
     }];
 }
 
--(UITabBarItem *)tabBarItem {
-    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
-}
+//- (UITabBarItem *)tabBarItem {
+//    return self.tabBarController.tabBar.items[[self.tabBarController.viewControllers indexOfObject:self]];
+//}
 
 - (void)locationManager:(CLLocationManager * _Nonnull)manager
      didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations

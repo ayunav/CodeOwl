@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvD-tA-hT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="121"/>
+            <point key="canvasLocation" x="1899" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8zm-lw-COz">
@@ -113,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mR-Qp-0Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608" y="-1085"/>
+            <point key="canvasLocation" x="4880" y="707"/>
         </scene>
         <!--MyProfileVC Nav Controller-->
         <scene sceneID="adQ-fu-g6U">
@@ -130,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOI-6d-pai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="-1085"/>
+            <point key="canvasLocation" x="3440" y="707"/>
         </scene>
         <!--Other User Profile View Controller-->
         <scene sceneID="f1q-V1-PyY">
@@ -183,7 +183,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="in8-jf-m1N">
                                 <rect key="frame" x="0.0" y="259" width="600" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Coding32" translatesAutoresizingMaskIntoConstraints="NO" id="Zav-O4-EyC" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Coding32" translatesAutoresizingMaskIntoConstraints="NO" id="Zav-O4-EyC">
                                         <rect key="frame" x="14" y="14" width="32" height="32"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Objective-C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a7-yj-wdF">
@@ -214,7 +214,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="level32" translatesAutoresizingMaskIntoConstraints="NO" id="ITe-Ki-k3p" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="level32" translatesAutoresizingMaskIntoConstraints="NO" id="ITe-Ki-k3p">
                                         <rect key="frame" x="464" y="14" width="32" height="32"/>
                                     </imageView>
                                 </subviews>
@@ -242,7 +242,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38k-xM-OKY">
                                 <rect key="frame" x="0.0" y="319" width="600" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gender32" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-FV-e4E" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gender32" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-FV-e4E">
                                         <rect key="frame" x="14" y="14" width="32" height="32"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHF-cE-fr5">
@@ -273,7 +273,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Translate16" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-7p-yIO" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Translate16" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-7p-yIO">
                                         <rect key="frame" x="464" y="14" width="32" height="32"/>
                                     </imageView>
                                 </subviews>
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smb-vM-6zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4048" y="-280"/>
+            <point key="canvasLocation" x="4880" y="-924"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Qhv-pr-k9d">
@@ -391,7 +391,6 @@
                                     <constraint firstAttribute="height" constant="60" id="6pj-j4-m1G"/>
                                     <constraint firstAttribute="width" constant="60" id="PDt-5y-fiX"/>
                                 </constraints>
-                                <state key="normal" image="fweat"/>
                                 <connections>
                                     <action selector="feliciaButton:" destination="Z8H-ty-7QS" eventType="touchUpInside" id="iLK-Iw-VU1"/>
                                 </connections>
@@ -426,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fer-Xk-CkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304" y="-280"/>
+            <point key="canvasLocation" x="4152" y="-924"/>
         </scene>
         <!--All Messages Table View Controller-->
         <scene sceneID="nQv-2l-wFm">
@@ -458,7 +457,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNE-HY-B8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304" y="540"/>
+            <point key="canvasLocation" x="4152" y="-96"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="zjf-QS-MvG">
@@ -526,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSE-QI-lfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4048" y="540"/>
+            <point key="canvasLocation" x="4880" y="-96"/>
         </scene>
         <!--Messages-->
         <scene sceneID="iTY-rG-PKG">
@@ -543,7 +542,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVR-1c-GqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="540"/>
+            <point key="canvasLocation" x="3440" y="-96"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1hI-FL-Zov">
@@ -558,11 +557,12 @@
                     <connections>
                         <segue destination="qpb-Rz-Oyc" kind="relationship" relationship="viewControllers" id="ZxK-MK-k7y"/>
                         <segue destination="mBA-dO-tgE" kind="relationship" relationship="viewControllers" id="RGW-LW-YRa"/>
+                        <segue destination="aKE-yx-E5y" kind="relationship" relationship="viewControllers" id="2Um-sJ-wpg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slh-c5-nqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1810" y="121"/>
+            <point key="canvasLocation" x="2622" y="121"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="euy-xy-ZrD">
@@ -624,7 +624,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="level32" translatesAutoresizingMaskIntoConstraints="NO" id="D8w-jq-LsA" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="level32" translatesAutoresizingMaskIntoConstraints="NO" id="D8w-jq-LsA">
                                         <rect key="frame" x="464" y="14" width="32" height="32"/>
                                     </imageView>
                                 </subviews>
@@ -652,7 +652,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-Fs-SPZ">
                                 <rect key="frame" x="0.0" y="367" width="600" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gender32" translatesAutoresizingMaskIntoConstraints="NO" id="dal-8Q-FmL" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gender32" translatesAutoresizingMaskIntoConstraints="NO" id="dal-8Q-FmL">
                                         <rect key="frame" x="14" y="14" width="32" height="32"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-QN-rXQ">
@@ -683,7 +683,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Translate16" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-ke-ZIY" customClass="codi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Translate16" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-ke-ZIY">
                                         <rect key="frame" x="464" y="14" width="32" height="32"/>
                                     </imageView>
                                 </subviews>
@@ -776,7 +776,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqh-Nc-Ylh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1899" y="-1085"/>
+            <point key="canvasLocation" x="4152" y="707"/>
         </scene>
         <!--Profile Settings View Controller-->
         <scene sceneID="Vsv-9g-ikX">
@@ -980,7 +980,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IT-R3-THC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3339" y="-1085"/>
+            <point key="canvasLocation" x="5583" y="707"/>
         </scene>
         <!--Map-->
         <scene sceneID="glr-Od-4AF">
@@ -999,7 +999,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2592" y="-280"/>
+            <point key="canvasLocation" x="3440" y="-924"/>
         </scene>
     </scenes>
     <resources>
@@ -1009,7 +1009,6 @@
         <image name="Translate16" width="16" height="16"/>
         <image name="WOCInTech" width="3840" height="5760"/>
         <image name="feliciaweathers" width="880" height="880"/>
-        <image name="fweat" width="480" height="480"/>
         <image name="gender32" width="32" height="32"/>
         <image name="level32" width="32" height="32"/>
         <image name="locationCircle32" width="32" height="32"/>

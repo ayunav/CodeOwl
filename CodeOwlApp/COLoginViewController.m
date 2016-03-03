@@ -27,9 +27,9 @@
 {
     [super viewDidLoad];
     
-    [self.loginButton
-     addTarget:self
-     action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.loginButton addTarget:self
+                         action:@selector(loginButtonClicked)
+               forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -46,49 +46,15 @@
              NSLog(@"Cancelled");
          } else {
              
-             // user logs in correctly
              NSLog(@"Logged in");
 
-             // this segue attempts to work but the view is in the wrong window hierarchy
-             // ERROR MESSAGE: Attempt to present <COTabBarController: 0x7fa6ac857830> on <FBSDKContainerViewController: 0x7fa6aa455d30> whose view is not in the window hierarchy!
-
-             //             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-            
-             
-             
-             
-             // attempts , doesn't work
-//             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-//             [appDelegate.window setRootViewController:tabBarController];
-//             [appDelegate.window makeKeyAndVisible];
-             
-             
-
-             // this doesn't work, trying to setup tabbarcontroller to rootViewController
-//             COTabBarController *tabBarController = [[COTabBarController alloc]init];
-//             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//             [appDelegate.window setRootViewController:tabBarController];
 //             [self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
 
-             
-             // app crashes when this segue is used: NSRangeException reason: '*** -[__NSArrayI objectAtIndex:]: index 9223372036854775807 beyond bounds [0 .. 1]'
-//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-//             [tabBarController setSelectedIndex:0];
-//             [self presentViewController:tabBarController animated:YES completion:nil];
+             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+             [self presentViewController:tabBarController animated:NO completion:nil];
 
-             // this results in the same error
-//             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//             COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-//             UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-//             [top presentViewController:tabBarController animated:YES completion: nil];
-             
-             // swift ?
-//             let mainTabBarController = MainTabBarController()
-//             appDelegate.window!.rootViewController = mainTabBarController
-         }
+          }
      }];
 }
 
