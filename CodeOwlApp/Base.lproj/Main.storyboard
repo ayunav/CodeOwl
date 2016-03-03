@@ -44,14 +44,17 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-T8-jRR" customClass="FBSDKLoginButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nva-z5-N33">
                                 <rect key="frame" x="200" y="525" width="200" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5tg-Mu-4P3"/>
-                                    <constraint firstAttribute="width" constant="200" id="ZOQ-yp-LAP"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wt0-Ws-oa7"/>
+                                    <constraint firstAttribute="width" constant="200" id="qwB-TH-yzt"/>
                                 </constraints>
-                            </view>
+                                <state key="normal" image="login-facebook"/>
+                                <connections>
+                                    <action selector="loginWithFacebookButtonTapped:" destination="i3b-E6-yOu" eventType="touchUpInside" id="noX-sr-mf8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,16 +67,16 @@
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leadingMargin" id="OeA-Eh-aWg"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leading" constant="180" id="Pdw-ar-lgd"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="UBo-e4-VbH"/>
-                            <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="ab9-T8-jRR" secondAttribute="bottom" constant="25" id="XCZ-9T-y6D"/>
+                            <constraint firstItem="Nva-z5-N33" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="UsO-dA-MVy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ddt-J7-8We" secondAttribute="trailing" id="Xu4-JK-Ssy"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="bS5-mg-UsK"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="hju-Dp-X6k"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ddt-J7-8We" secondAttribute="bottom" id="jk7-Yc-AEb"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mLs-AE-Iwr"/>
                             <constraint firstAttribute="trailing" secondItem="IHa-sp-PJN" secondAttribute="trailing" id="mWl-1Y-l0g"/>
-                            <constraint firstItem="ab9-T8-jRR" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="t6C-Ft-NJp"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="top" secondItem="dNq-cv-NBJ" secondAttribute="bottom" id="tz7-L8-80C"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="v0B-Dy-fxi"/>
+                            <constraint firstItem="3XG-V2-U8V" firstAttribute="top" secondItem="Nva-z5-N33" secondAttribute="bottom" constant="25" id="x49-XI-zwx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -91,7 +94,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="dkE-5N-Dz2"/>
                     <connections>
-                        <outlet property="loginButton" destination="ab9-T8-jRR" id="o0G-6e-ksC"/>
                         <segue destination="986-iE-ufJ" kind="show" identifier="segueToTabBarVC" id="gZr-Gr-rIC"/>
                     </connections>
                 </viewController>
@@ -1030,6 +1032,7 @@
         <image name="gender32" width="32" height="32"/>
         <image name="level32" width="32" height="32"/>
         <image name="locationCircle32" width="32" height="32"/>
+        <image name="login-facebook" width="416" height="101"/>
         <image name="maps32" width="32" height="32"/>
         <image name="messageCircle32" width="32" height="32"/>
         <image name="near_me48" width="48" height="48"/>
