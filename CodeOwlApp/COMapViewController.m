@@ -36,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
+    [self setupUI];
+    
     //create location manager
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
