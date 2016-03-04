@@ -16,7 +16,7 @@ Projects were evaluated by an elite panel of judges including Benjamin Jackson, 
 
 CodeOwl team will present the app at the QTM (Queens Tech MeetUp) in December 2015.
 
-![video](https://github.com/ayunav/CodeOwlApp/blob/working-version/CodeOwlApp.gif)
+![video](https://github.com/ayunav/CodeOwl/blob/master/CodeOwlApp.gif)
 
 Read Ayuna's blog post ["How to learn UI: Beginner's guide to iOS mobile app design"](https://medium.com/@AyunasCode/how-to-learn-ui-bc6f05738e4d#.vvsnguhtn) in which she recommneds her favorite resources and uses CodeOwl app as an example. 
 
