@@ -28,22 +28,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    // Presenting view controllers on detached view controllers is discouraged <COLoginViewController: 0x7f82c14bc3b0>.
-    // Unbalanced calls to begin/end appearance transitions for <UINavigationController: 0x7f82c187d600>.
-    if ([FBSDKAccessToken currentAccessToken]) {
-        
-        self.loginButton.hidden = YES;
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-        [self presentViewController:tabBarController animated:NO completion:nil];
-    }
+    return;
+}
+
+- (void)presentTabBarController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+    [self presentViewController:tabBarController animated:NO completion:nil];
 }
 
 - (IBAction)loginWithFacebookButtonTapped:(id)sender {
@@ -56,13 +52,10 @@
             NSLog(@"User signed up and logged in through Facebook!");
         } else {
             NSLog(@"User logged in through Facebook!");
-            self.loginButton.hidden = YES; 
-            
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
-            [self presentViewController:tabBarController animated:NO completion:nil];
-            //[self performSegueWithIdentifier:@"segueToTabBarVC" sender:nil];
-            
+            self.loginButton.hidden = YES;
+
+            [self presentTabBarController];
+           
             
             //            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email, gender, link"}];
             //

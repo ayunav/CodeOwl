@@ -33,7 +33,18 @@
 
     
     [self setUpUI];
-    
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        COTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"COTabBarController"];
+        self.window.rootViewController = tabBarController;
+    }
+    else {
+        COLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"COLoginViewController"];
+        self.window.rootViewController = loginViewController;
+    }
+    [self.window makeKeyAndVisible];
+
 //    PFUser *user = [COUser currentUser];
 //    
 //    if (!user) {
@@ -46,8 +57,7 @@
 //        [self.window setRootViewController:tabBarController];
 //    }
     
-    
-    
+ 
     
     // ?
 //    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;

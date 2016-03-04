@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--LoginViewController-->
@@ -18,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WOCInTech" translatesAutoresizingMaskIntoConstraints="NO" id="ddt-J7-8We" userLabel="WOCInTech Bckground Image">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="20" y="44" width="560" height="556"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-sp-PJN">
-                                <rect key="frame" x="0.0" y="64" width="600" height="180"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodeOwl" translatesAutoresizingMaskIntoConstraints="NO" id="QVp-R1-YhG">
-                                        <rect key="frame" x="20" y="0.0" width="560" height="180"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="150"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +35,6 @@
                                     <constraint firstItem="QVp-R1-YhG" firstAttribute="top" secondItem="IHa-sp-PJN" secondAttribute="top" id="ar5-DP-Jn6"/>
                                     <constraint firstAttribute="bottom" secondItem="QVp-R1-YhG" secondAttribute="bottom" id="hJS-wv-7Cw"/>
                                     <constraint firstAttribute="width" constant="320" id="rE5-fn-A1j"/>
-                                    <constraint firstAttribute="height" constant="180" id="xcn-dr-nnY"/>
                                     <constraint firstItem="QVp-R1-YhG" firstAttribute="leading" secondItem="IHa-sp-PJN" secondAttribute="leading" constant="20" id="xrc-E3-WDK"/>
                                 </constraints>
                                 <variation key="default">
@@ -56,20 +56,22 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ddt-J7-8We" firstAttribute="top" secondItem="dNq-cv-NBJ" secondAttribute="bottom" id="1qZ-WK-OVQ"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="3HI-je-KUS"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="5Oi-Uk-tpk"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leading" id="773-F6-0oj"/>
                             <constraint firstItem="ddt-J7-8We" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leadingMargin" id="84Q-zn-xqE"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="top" secondItem="dNq-cv-NBJ" secondAttribute="bottom" id="D0R-Fp-fQR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IHa-sp-PJN" secondAttribute="trailing" id="Jc7-IO-1Hd"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leadingMargin" id="OeA-Eh-aWg"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="leading" secondItem="fzo-1Z-LcO" secondAttribute="leading" constant="180" id="Pdw-ar-lgd"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerY" secondItem="fzo-1Z-LcO" secondAttribute="centerY" id="UBo-e4-VbH"/>
                             <constraint firstItem="Nva-z5-N33" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="UsO-dA-MVy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ddt-J7-8We" secondAttribute="trailing" id="Xu4-JK-Ssy"/>
+                            <constraint firstItem="IHa-sp-PJN" firstAttribute="height" secondItem="fzo-1Z-LcO" secondAttribute="height" multiplier="0.25" id="Yf8-XP-bRF"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="bS5-mg-UsK"/>
+                            <constraint firstItem="ddt-J7-8We" firstAttribute="top" secondItem="dNq-cv-NBJ" secondAttribute="bottom" constant="-20" id="fuJ-RG-4uU"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="hju-Dp-X6k"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ddt-J7-8We" secondAttribute="bottom" id="jk7-Yc-AEb"/>
                             <constraint firstItem="IHa-sp-PJN" firstAttribute="centerX" secondItem="fzo-1Z-LcO" secondAttribute="centerX" id="mLs-AE-Iwr"/>
@@ -88,7 +90,9 @@
                                 <exclude reference="bS5-mg-UsK"/>
                                 <exclude reference="hju-Dp-X6k"/>
                                 <exclude reference="mLs-AE-Iwr"/>
+                                <exclude reference="tz7-L8-80C"/>
                                 <exclude reference="v0B-Dy-fxi"/>
+                                <exclude reference="1qZ-WK-OVQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -363,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smb-vM-6zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4880" y="-924"/>
+            <point key="canvasLocation" x="5692" y="-996"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Qhv-pr-k9d">
@@ -399,7 +403,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5A6-7G-Fnk" firstAttribute="top" secondItem="9A0-bB-PkU" secondAttribute="bottom" constant="15" id="20h-Sh-jJK"/>
                             <constraint firstItem="4k1-xw-hIO" firstAttribute="top" secondItem="B1P-OW-ncG" secondAttribute="bottom" constant="178" id="HCx-0u-ZHB"/>
@@ -428,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fer-Xk-CkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4152" y="-924"/>
+            <point key="canvasLocation" x="4964" y="-996"/>
         </scene>
         <!--All Messages Table View Controller-->
         <scene sceneID="nQv-2l-wFm">
@@ -1014,7 +1018,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj2-VB-82i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3440" y="-924"/>
+            <point key="canvasLocation" x="4252" y="-996"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Hb-aX-472">
